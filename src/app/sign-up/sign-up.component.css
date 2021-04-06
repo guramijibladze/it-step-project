@@ -1,0 +1,35 @@
+.register-div{
+    width: 500px;
+    height: 550px;
+    background-color: #d9dadd;
+    margin-left: 60%;
+    /* margin-top: 100px; */
+}
+
+input[type="text"]::placeholder {  
+    padding-left: 10px; 
+    font-size: 15px;
+    color: #353636;
+    opacity: 0.5;
+} 
+
+input[type="number"]::placeholder{
+    padding-left: 10px; 
+    font-size: 15px;
+    color: #353636;
+    opacity: 0.5;
+}
+
+.button {
+    background-color: background color;
+     border: none;
+    color: text color;
+     padding: 10px 25px;
+     text-align: center;
+    text-decoration: none;
+     display: inline-block;
+     font-size: 16px;
+     margin: 4px 4px;
+     cursor: pointer;
+     border-radius: 8px;
+   }

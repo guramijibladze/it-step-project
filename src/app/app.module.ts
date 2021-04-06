@@ -13,8 +13,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login/login.component';
-// import { MatSliderModule } from '@angular/material/slider';
-// import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { SignUpComponent } from './sign-up/sign-up.component';
+
 
 @NgModule({
   declarations: [
@@ -22,6 +22,7 @@ import { LoginComponent } from './login/login.component';
     // MatSliderModule,
     FooterComponent,
     LoginComponent,
+    SignUpComponent,
 
   ],
   imports: [
