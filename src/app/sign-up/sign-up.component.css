@@ -32,7 +32,10 @@ input[type="number"]::placeholder{
 
    @media only screen and (max-width: 1400px){
        .container{
-        padding-top: 0%!important;
+            padding-top: 0%!important;
+            margin-top: 20px;
        }
-        
+       .register-div{
+            margin-left: 40%;
+       }
    }
