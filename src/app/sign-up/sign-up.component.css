@@ -5,6 +5,9 @@
     margin-left: 60%;
     /* margin-top: 100px; */
 }
+.container{
+    padding-top: 5%;
+}
 
 input[type="text"]::placeholder {  
     padding-left: 10px; 
@@ -24,4 +27,12 @@ input[type="number"]::placeholder{
     padding: 10px 25px;
     text-decoration: none;
     margin: 4px 4px;
+   }
+
+
+   @media only screen and (max-width: 1400px){
+       .container{
+        padding-top: 0%!important;
+       }
+        
    }
