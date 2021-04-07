@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-customers',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./customers.component.css']
 })
 export class CustomersComponent implements OnInit {
-
-  constructor() { }
+  closeResult!: string;
+  constructor(private modalService: NgbModal) { }
 
   ngOnInit(): void {
   }
+
+  openLg(content:any) {
+    this.modalService.open(content, { size: 'lg' });
+  }
+
 
 }
