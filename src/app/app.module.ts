@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { CustomersComponent } from './customers/customers.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     FooterComponent,
     LoginComponent,
     SignUpComponent,
+    CustomersComponent,
 
   ],
   imports: [
