@@ -16,6 +16,7 @@ import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { CustomersComponent } from './customers/customers.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { TableComponent } from './customers/table/table.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     LoginComponent,
     SignUpComponent,
     CustomersComponent,
+    TableComponent,
 
   ],
   imports: [

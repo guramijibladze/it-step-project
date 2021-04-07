@@ -12,35 +12,43 @@
                     </button>
 
                         <!-- Modal -->
-                        <ng-template #mymodal let-modal>
-                          <div class="modal-header">
-                            <h4 class="modal-title">Add information of Hotel</h4>
-                            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-                              <span aria-hidden="true">×</span>
-                            </button>
-                          </div>
-                          <div class="modal-body" style="position: relative; height: 380px;">
-                              <div class="container">
-                                <div class="content d-flex flex-column text-center pl-5 pr-5 pt-3" >
-                                    <label for="" >Hotel Name</label>
-                                    <input class="border rounded" type="text" style="height: 35px">
-                                    <label for="" class="mt-2">Hotel Address</label>
-                                    <input class="border rounded" type="text" style="height: 35px">
-                                    <label for="" class="mt-2">City</label>
-                                    <input class="border rounded" type="text" style="height: 35px">
-                                    <label for="" class="mt-2">Descrption</label>
-                                    <div class="form-floating">
-                                      <textarea class="form-control" placeholder="Leave a comment here" 
-                                      id="floatingTextarea2" style="height: 100px"></textarea>
-                                    </div>
+                        <!-- <form #productForm="ngForm" (ngSubmit)="addFile()"></form> -->
+                            <ng-template #mymodal let-modal>
+                                <div class="modal-header">
+                                  <h4 class="modal-title">Add information of Hotel</h4>
+                                  <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                                    <span aria-hidden="true">×</span>
+                                  </button>
                                 </div>
-                              </div>
-                              
-                          </div>
-                          <div class="modal-footer">
-                            <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Ok</button>
-                          </div>
-                        </ng-template>
+                                <div class="modal-body" style="position: relative; height: 430px;">
+                                    <div class="container">
+                                      <div class="content d-flex flex-column text-center pl-5 pr-5 pt-3" >
+                                          <label for="" >Hotel Name</label>
+                                          <input class="border rounded" [(ngModel)]="product.name" type="text" style="height: 35px">
+                                          <label for="" class="mt-2">Hotel Address</label>
+                                          <input class="border rounded" [(ngModel)]="product.HotelAddress" type="text" style="height: 35px">
+                                          <label for="" class="mt-2">City</label>
+                                          <input class="border rounded" [(ngModel)]="product.City" type="text" style="height: 35px">
+                                          <label for="" class="mt-2">Descrption</label>
+                                          <div class="form-floating">
+                                            <textarea class="form-control" [(ngModel)]="product.Descrption" placeholder="Leave a comment here" 
+                                            id="floatingTextarea2" style="height: 100px"></textarea>
+                                          </div>
+                                          <div class="save mt-2">
+                                            <button type="submit" class="btn btn-outline-dark" (click)="addFile()">
+                                                save</button>
+                                          </div>
+                                      </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="submit" class="btn btn-outline-dark" (click)="modal.close('Save click')">Ok</button>
+                                </div>
+                              </ng-template>
+                        <!-- </form> -->
+
+                        
                 </div>
             </div>
         </div>
@@ -57,6 +65,8 @@
                         <span><strong>all costumers: (124)</strong> </span>
                     </div>
 
+                    <!-- <p>{{product.name}}</p>
+                    <p>{{HotelAddress}}</p> -->
                     <div class="col-sm-4">
                         <div class="input-group rounded">
                             <span class="input-group-text border-0" id="search-addon">
@@ -65,6 +75,7 @@
                             <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
                               aria-describedby="search-addon" />
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -72,3 +83,11 @@
        
     </div>
 </div>
+
+<div class="container mt-5">
+    <!-- <div *ngFor="let prod of product;">{{prod.name}}</div> -->
+    <!-- <p *ngFor='let i of product;'></p> -->
+    <app-table [item]='array'></app-table>
+</div>
+
+
