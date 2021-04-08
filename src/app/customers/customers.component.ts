@@ -13,14 +13,14 @@ export class CustomersComponent implements OnInit {
   // City!:string;
   // Descrption!:string;
   array:any = [];
-  product:{name:string, HotelAddress:string, City:string, Descrption:string} = 
-  {name:'', HotelAddress: '', City:'', Descrption:''}
+  product:{name:string, HotelAddress:string, City:string, Descrption:string, Image: string} =
+  {name:'', HotelAddress: '', City:'', Descrption:'', Image: ''}
 
 
   constructor(private modalService: NgbModal) { }
 
   ngOnInit(): void {
-  
+
   }
 
   openLg(content:any) {
@@ -29,8 +29,8 @@ export class CustomersComponent implements OnInit {
 
   addFile(){
     this.array.push(this.product);
-    this.product = { name:"", HotelAddress:"", City:"", Descrption:"" }
-    
+    this.product = { name:"", HotelAddress:"", City:"", Descrption:"", Image: '' }
+
     console.log(this.array)
   }
 

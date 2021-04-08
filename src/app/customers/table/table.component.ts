@@ -1,17 +1,22 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbRatingConfig } from '@ng-bootstrap/ng-bootstrap';
+
 // import { }
 
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
-  styleUrls: ['./table.component.css']
+  styleUrls: ['./table.component.css'],
 })
 export class TableComponent implements OnInit {
-  @Input()item:any = [];
-  
-  constructor() { }
+  @Input() item: any = [];
 
-  ngOnInit(): void {
+  constructor(private modalService: NgbModal) {}
+
+  openLg(content: any) {
+    this.modalService.open(content, { size: 'lg' });
   }
 
+  ngOnInit(): void {}
 }

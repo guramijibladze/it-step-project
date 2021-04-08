@@ -1,10 +1,103 @@
 <!-- <p *ngFor='let i of item'>{{i.name}}</p> -->
 
-<div class="container">
-    <div class="row" *ngFor='let i of item'>
-        <div class="col-sm-3 p-2">{{i.name}}</div>
-        <div class="col-sm-3 p-2">{{i.HotelAddress}}</div>
-        <div class="col-sm-3 p-2">{{i.City}}</div>
-        <div class="col-sm-3 p-2" >{{i.Descrption}}</div>
-      </div>
+<div class="container my-5">
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-image">
+        <thead>
+          <tr>
+            <th scope="col">NUM</th>
+            <th scope="col">Image</th>
+            <th scope="col">Hotel Name</th>
+            <th scope="col">Hotel Address</th>
+            <th scope="col">City</th>
+            <th scope="col">Description</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let i of item">
+            <th scope="row">1</th>
+            <td class="w-25">
+              <img
+                src="{{ i.Image }}"
+                class="img-fluid img-thumbnail"
+                alt="Sheep"
+              />
+            </td>
+            <td>{{ i.name }}</td>
+            <td>{{ i.HotelAddress }}</td>
+            <td>{{ i.City }}</td>
+            <td>{{ i.Descrption }}</td>
+            <td>
+              <button
+                type="button"
+                class="btn btn-primary"
+                (click)="openLg(mymodal)"
+              >
+                <i class="far fa-eye"></i>
+              </button>
+            </td>
+
+            <!--- modal -->
+            <ng-template #mymodal let-modal>
+              <div class="modal-header">
+                <h4 class="modal-title">More information about Hotel</h4>
+                <button
+                  type="button"
+                  class="close"
+                  aria-label="Close"
+                  (click)="modal.dismiss('Cross click')"
+                >
+                  <span aria-hidden="true">×</span>
+                </button>
+              </div>
+              <div class="modal-body" style="position: relative; height: auto">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-12">
+                      <h1>{{ i.name }}</h1>
+                      <h3>5 star</h3>
+                      <img
+                        src="https://agenda.ge/files/Economy/Tourism/paraghraph-hotel.jpg"
+                        alt=""
+                        style="width: inherit"
+                      />
+                    </div>
+                    <div class="row my-3 d-flex justify-content-between" style="width: 100%;">
+                      <div class="col-4">
+                        <ul>
+                          <li>
+                            <i class="fas fa-search-location"></i>
+                            {{ i.HotelAddress }}
+                          </li>
+                          <li><i class="fas fa-city"></i> {{ i.City }}</li>
+                        </ul>
+                      </div>
+                      <div class="col-8">
+                        <em>Description</em>
+                        <hr>
+                        <p>{{ i.Descrption }}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="submit"
+                  class="btn btn-outline-dark"
+                  (click)="modal.close('Save click')"
+                >
+                  Ok
+                </button>
+              </div>
+            </ng-template>
+            <!--- modal -->
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
