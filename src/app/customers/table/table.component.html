@@ -18,18 +18,36 @@
 
         <tbody>
           <tr *ngFor="let i of item; index as num">
-            <th scope="row">{{num + 1}}</th>
+            <th scope="row">{{ num + 1 }}</th>
             <td class="w-25">
               <img
+                *ngIf="!tableEdit"
                 src="{{ i.Image }}"
                 class="img-fluid img-thumbnail"
                 alt="Sheep"
               />
+              <input *ngIf="tableEdit" type="text" [(ngModel)]="i.Image" />
             </td>
-            <td>{{ i.name }}</td>
-            <td>{{ i.HotelAddress }}</td>
-            <td>{{ i.City }}</td>
-            <td>{{ i.Descrption }}</td>
+            <td>
+              <p *ngIf="!tableEdit">{{ i.name }}</p>
+              <input *ngIf="tableEdit" type="text" [(ngModel)]="i.name" />
+            </td>
+            <td>
+              <p *ngIf="!tableEdit">{{ i.HotelAddress }}</p>
+              <input
+                *ngIf="tableEdit"
+                type="text"
+                [(ngModel)]="i.HotelAddress"
+              />
+            </td>
+            <td>
+              <p *ngIf="!tableEdit">{{ i.City }}</p>
+              <input *ngIf="tableEdit" type="text" [(ngModel)]="i.City" />
+            </td>
+            <td>
+              <p *ngIf="!tableEdit">{{ i.Descrption }}</p>
+              <input *ngIf="tableEdit" type="text" [(ngModel)]="i.Descrption" />
+            </td>
             <td>
               <button
                 type="button"
@@ -41,7 +59,7 @@
               <button
                 type="button"
                 class="btn btn-warning"
-                (click)="openLg(mymodal)"
+                (click)="editTableRow()"
               >
                 <i class="far fa-edit text-white"></i>
               </button>
@@ -108,12 +126,9 @@
               </div>
             </ng-template>
             <!--- modal -->
-
           </tr>
         </tbody>
       </table>
     </div>
   </div>
 </div>
-
-

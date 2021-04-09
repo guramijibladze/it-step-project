@@ -12,11 +12,16 @@ import { NgbRatingConfig } from '@ng-bootstrap/ng-bootstrap';
 })
 export class TableComponent implements OnInit {
   @Input() item: any = [];
+  tableEdit:boolean = false;
 
   constructor(private modalService: NgbModal, public service: CustomersService) {}
 
   openLg(content: any) {
     this.modalService.open(content, { size: 'lg' });
+  }
+
+  editTableRow(){
+    this.tableEdit = !this.tableEdit;
   }
 
   deleteCustomer(id:number){

@@ -1,5 +1,4 @@
 
-
 export class CustomersService {
   customers: any = [
     {
@@ -19,6 +18,7 @@ export class CustomersService {
           id: 854
     },
   ];
+
   getCustomers() {
     return this.customers
   }
