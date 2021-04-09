@@ -1,3 +1,4 @@
+import { CustomersService } from './customers.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 /* font awsome */
@@ -40,7 +41,7 @@ import { TableComponent } from './customers/table/table.component';
     FontAwesomeModule,
     NgbModule
   ],
-  providers: [],
+  providers: [CustomersService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

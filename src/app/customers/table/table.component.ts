@@ -1,3 +1,4 @@
+import { CustomersService } from './../../customers.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NgbRatingConfig } from '@ng-bootstrap/ng-bootstrap';
@@ -12,10 +13,14 @@ import { NgbRatingConfig } from '@ng-bootstrap/ng-bootstrap';
 export class TableComponent implements OnInit {
   @Input() item: any = [];
 
-  constructor(private modalService: NgbModal) {}
+  constructor(private modalService: NgbModal, public service: CustomersService) {}
 
   openLg(content: any) {
     this.modalService.open(content, { size: 'lg' });
+  }
+
+  deleteCustomer(id:number){
+    this.service.deleteCustomer(id)
   }
 
   ngOnInit(): void {}

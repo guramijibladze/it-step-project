@@ -1,7 +1,8 @@
 footer{
   position: relative;
-  margin-top: 90%;
+  width: 100%;
 }
+
 hr {
   margin-top: 0;
   background-color: white;

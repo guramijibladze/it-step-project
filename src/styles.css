@@ -10,12 +10,6 @@ body {
  position: relative;
 }
 
-footer {
-    position: absolute!important;
-    bottom: 0;
-    width: 100%;
-   }
-
 /* html, body { height: 100%; } */
 body, .register { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
