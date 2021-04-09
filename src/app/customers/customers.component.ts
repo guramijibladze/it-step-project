@@ -7,11 +7,7 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./customers.component.css']
 })
 export class CustomersComponent implements OnInit {
-  // closeResult!: string;
-  // name!:string;
-  // HotelAddress!:string;
-  // City!:string;
-  // Descrption!:string;
+  allCustomers: number = 0;
   array:any = [];
   product:{name:string, HotelAddress:string, City:string, Descrption:string, Image: string} =
   {name:'', HotelAddress: '', City:'', Descrption:'', Image: ''}
@@ -30,8 +26,27 @@ export class CustomersComponent implements OnInit {
   addFile(){
     this.array.push(this.product);
     this.product = { name:"", HotelAddress:"", City:"", Descrption:"", Image: '' }
+    this.allCustomers = this.array.length
+    // console.log(this.array.length)
+  }
 
-    console.log(this.array)
+
+  openVerticallyCentered(deleteContent:any) {
+    this.modalService.open(deleteContent, { centered: true });
+  }
+
+
+  deleteArrIem(deleteItem:any){
+    deleteItem - 1;
+    if(this.array.length == 0){
+      alert('list is empty')
+    }else{
+      // this.array.splice(deleteItem, 1);
+      delete this.array[deleteItem];
+      deleteItem = "";
+    }
+    // console.log(deleteItem);
+    
   }
 
 }

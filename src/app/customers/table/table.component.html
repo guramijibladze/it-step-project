@@ -17,8 +17,8 @@
         </thead>
 
         <tbody>
-          <tr *ngFor="let i of item">
-            <th scope="row">1</th>
+          <tr *ngFor="let i of item; index as num">
+            <th scope="row">{{num + 1}}</th>
             <td class="w-25">
               <img
                 src="{{ i.Image }}"
@@ -101,3 +101,5 @@
     </div>
   </div>
 </div>
+
+
