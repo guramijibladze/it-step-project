@@ -11,15 +11,10 @@ import { servicesVersion } from 'typescript';
 })
 
 export class CustomersComponent implements OnInit {
-  // closeResult!: string;
-  // name!:string;
-  // HotelAddress!:string;
-  // City!:string;
-  // Descrption!:string;
-  // array:any = [];
+  allCustomers: number = 0;
+  customers: any = [];
   product:{name:string, HotelAddress:string, City:string, Descrption:string, Image: string, id: any} =
   {name:'', HotelAddress: '', City:'', Descrption:'', Image: '', id: +Math.floor(Math.random()*1000) }
-  customers: any = [];
 
   constructor(private modalService: NgbModal, public service: CustomersService) {
     this.customers = service.getCustomers();
@@ -40,11 +35,33 @@ export class CustomersComponent implements OnInit {
   }
 
   addFile(){
-    console.log(this.product)
     // this.array.push(this.product);
+    // this.product = { name:"", HotelAddress:"", City:"", Descrption:"", Image: '' }
+    // this.allCustomers = this.array.length
+    // console.log(this.array.length)
+
+    console.log(this.product)
     this.service.setCustomers(this.product);
     this.product = { name:"", HotelAddress:"", City:"", Descrption:"", Image: '', id: null }
     console.log(this.customers)
+  }
+
+
+  openVerticallyCentered(deleteContent:any) {
+    this.modalService.open(deleteContent, { centered: true });
+  }
+
+
+  deleteArrIem(deleteItem:any){
+    deleteItem - 1;
+    if(this.customers.length == 0){
+      alert('list is empty')
+    }else{
+      // this.array.splice(deleteItem, 1);
+      delete this.customers[deleteItem];
+      deleteItem = "";
+    }
+    // console.log(deleteItem);
   }
 
 }
