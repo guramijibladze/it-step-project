@@ -6,6 +6,7 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
   templateUrl: './customers.component.html',
   styleUrls: ['./customers.component.css']
 })
+
 export class CustomersComponent implements OnInit {
   // closeResult!: string;
   // name!:string;
@@ -13,14 +14,13 @@ export class CustomersComponent implements OnInit {
   // City!:string;
   // Descrption!:string;
   array:any = [];
-  product:{name:string, HotelAddress:string, City:string, Descrption:string, Image: string} =
-  {name:'', HotelAddress: '', City:'', Descrption:'', Image: ''}
+  product:{name:string, HotelAddress:string, City:string, Descrption:string, Image: string, id: any} =
+  {name:'', HotelAddress: '', City:'', Descrption:'', Image: '', id: +Math.floor(Math.random()*1000) }
 
 
   constructor(private modalService: NgbModal) { }
 
   ngOnInit(): void {
-
   }
 
   openLg(content:any) {
@@ -28,9 +28,9 @@ export class CustomersComponent implements OnInit {
   }
 
   addFile(){
+    console.log(this.product)
     this.array.push(this.product);
-    this.product = { name:"", HotelAddress:"", City:"", Descrption:"", Image: '' }
-
+    this.product = { name:"", HotelAddress:"", City:"", Descrption:"", Image: '', id: null }
     console.log(this.array)
   }
 

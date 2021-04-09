@@ -1,3 +1,9 @@
+tr:hover{
+  background-color: bisque;
+  
+}
+
+
 td{
   overflow: hidden;
   width: auto;
