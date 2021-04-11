@@ -1,0 +1,52 @@
+{
+  "hosting": [
+    {
+      "target": "it-step-project",
+      "public": "dist/it-step-project",
+      "ignore": [
+        "**/.*"
+      ],
+      "headers": [
+        {
+          "source": "*.[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f].+(css|js)",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "public,max-age=31536000,immutable"
+            }
+          ]
+        }
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    },
+    {
+      "target": "it-step-project",
+      "public": "dist/it-step-project",
+      "ignore": [
+        "**/.*"
+      ],
+      "headers": [
+        {
+          "source": "*.[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f].+(css|js)",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "public,max-age=31536000,immutable"
+            }
+          ]
+        }
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}

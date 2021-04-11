@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "it-step-project-e30b5": {
+      "hosting": {
+        "it-step-project": [
+          "it-step-project-e30b5"
+        ]
+      }
+    }
+  }
+}

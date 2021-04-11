@@ -25,7 +25,7 @@ export class CustomersComponent implements OnInit {
    /* lifecycle method for updating DOM, after customer is deleted or edited */
    ngAfterContentChecked(){
     console.log('ngAfterContentChecked');
-      // this.customers = this.service.getCustomers();
+      this.customers = this.service.getCustomers();
    }
 
    ngAfterViewChecked(){

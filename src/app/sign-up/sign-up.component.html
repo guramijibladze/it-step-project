@@ -8,14 +8,14 @@
             </div>
             
     
-            <form action="#">
+            <form  >
                 <div class="name-lastName d-flex justify-content-between">
                     <div class="first-name" >
-                        <input class="border rounded" type="text" 
+                        <input  class="border rounded" type="text" 
                         style="width: 220px; height: 40px;" placeholder="First Name">
                     </div>
                     <div class="last-name">
-                        <input class="border rounded" type="text" 
+                        <input  class="border rounded" type="text" 
                         style="width: 220px; height: 40px;" placeholder="Lirst Name">
                     </div>
                 </div>
@@ -23,24 +23,24 @@
                     
                 </div>
                 <div class="email mt-4">
-                    <input class="border rounded" type="text" 
+                    <input [(ngModel)]="email" name="email" class="border rounded" type="text" 
                         style="width: 100%; height: 40px;" placeholder="Email">
                 </div>
                 <div class="phone mt-4" >
-                    <input class="border rounded" type="number" 
+                    <input  class="border rounded" type="number" 
                         style="width: 100%; height: 40px;" placeholder="Phone">
                 </div>
                 <div class="password mt-4">
-                    <input class="border rounded" type="text" 
+                    <input [(ngModel)]="pass" name="pass" class="border rounded" type="password" 
                         style="width: 100%; height: 40px;" placeholder="Password">
                 </div>
                 <div class="Confirmpassword mt-4">
-                    <input class="border rounded" type="text" 
-                        style="width: 100%; height: 40px;" placeholder="Confirmpassword">
+                    <input  class="border rounded" [(ngModel)]="confirmpassword" name="confirmpassword" type="password" 
+                    style="width: 100%; height: 40px;" placeholder="Confirmpassword">
                 </div>
     
                 <div class="form-check mt-4">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <input  class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                     <label class="form-check-label" for="flexCheckDefault" style="opacity: 0.6;">
                       I accept the <strong>Terms</strong>  of <strong>Use</strong>
                     </label>
@@ -48,7 +48,7 @@
                 
                 <div class="mt-4 d-flex justify-content-between text-center" >
                     <div class="button" style="width: 100%;">
-                        <button class="btn btn-primary" type="button" style="width: 80%; max-height: 35px;">Register</button>
+                        <button class="btn btn-primary" type="submit" (click)="onSubmit()" style="width: 80%; max-height: 35px;">Register</button>
                     </div>
                     <div class="icon p-3" style="width: 100%;">
                         <fa-icon [routerLink] = "['/']" [icon] = "faArrowLeft" style="font-size: 30px;"></fa-icon>

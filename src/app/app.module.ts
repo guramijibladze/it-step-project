@@ -18,6 +18,11 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { CustomersComponent } from './customers/customers.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { TableComponent } from './customers/table/table.component';
+import { environment } from '../environments/environment';
+import { AngularFireModule } from '@angular/fire';
+
+// import { ReactiveFormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -39,7 +44,8 @@ import { TableComponent } from './customers/table/table.component';
     HttpClientModule,
     NoopAnimationsModule,
     FontAwesomeModule,
-    NgbModule
+    NgbModule,
+    AngularFireModule.initializeApp(environment.firebase)
   ],
   providers: [CustomersService],
   bootstrap: [AppComponent]

@@ -31,7 +31,6 @@
               "src/custom-theme.scss",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
-              
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.min.js"
@@ -125,6 +124,10 @@
               "devServerTarget": "it-step-project:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
     }
