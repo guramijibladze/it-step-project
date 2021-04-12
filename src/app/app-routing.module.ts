@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'customers', component: CustomersComponent }
 ];
-
+asad
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
