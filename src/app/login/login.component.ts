@@ -11,6 +11,8 @@ import { FormBuilder, FormGroup, Validators } from  '@angular/forms';
 export class LoginComponent implements OnInit {
   email!:string;
   pass!:string;
+  // user:any = 0;
+  // user = firebase.auth().currentUser;
 
   loginForm!: FormGroup;
   isSubmitted  =  false;
@@ -25,9 +27,9 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
-    
     // console.log('Email: ${this.email} Password: ${this.pass}');
     this.auth.signInWithEmailAndPassword(this.email, this.pass).catch(error=>console.log(error.code)).then(result=>console.log(result));
+    if(this.email)
     this.router.navigateByUrl('/customers');
   }
 }
