@@ -1,8 +1,8 @@
 import { CustomersService } from './../customers.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import { servicesVersion } from 'typescript';
-
+import { FirebaseService } from '../firebase.service';
 
 @Component({
   selector: 'app-customers',
@@ -11,25 +11,31 @@ import { servicesVersion } from 'typescript';
 })
 
 export class CustomersComponent implements OnInit {
+  @Output() isLogout = new EventEmitter<void>()
   allCustomers: number = 0;
   customers: any = [];
   product:{name:string, HotelAddress:string, City:string, Descrption:string, Image: string, id: any} =
   {name:'', HotelAddress: '', City:'', Descrption:'', Image: '', id: +Math.floor(Math.random()*1000) }
 
-  constructor(private modalService: NgbModal, public service: CustomersService) {
+  constructor(private modalService: NgbModal, public service: CustomersService, public firebaseService: FirebaseService) {
     this.customers = service.getCustomers();
     this.allCustomers = this.customers.length;
    }
 
+   logout(){
+    this.firebaseService.logout()
+    this.isLogout.emit()
+  }
+
 
    /* lifecycle method for updating DOM, after customer is deleted or edited */
    ngAfterContentChecked(){
-    console.log('ngAfterContentChecked');
+    // console.log('ngAfterContentChecked');
       this.customers = this.service.getCustomers();
    }
 
    ngAfterViewChecked(){
-     console.log('ngAfterViewChecked')
+    //  console.log('ngAfterViewChecked')
    }
 
   ngOnInit(): void {

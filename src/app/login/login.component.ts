@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from  '@angular/router';
 import { FormBuilder, FormGroup, Validators } from  '@angular/forms';
+import { FirebaseService } from '../firebase.service';
 
 @Component({
   selector: 'app-login',
@@ -16,20 +17,21 @@ export class LoginComponent implements OnInit {
 
   loginForm!: FormGroup;
   isSubmitted  =  false;
+  isSignedIn = false
 
-  constructor(public auth:AngularFireAuth,  private router: Router, private formBuilder: FormBuilder) { }
+  constructor(public auth:AngularFireAuth, public firebaseService : FirebaseService) { }
 
   ngOnInit(): void {
-    this.loginForm  =  this.formBuilder.group({
-      email: ['', Validators.required],
-      password: ['', Validators.required]
-  });
+  
+  }
+  async onSignin(email:string,pass:string){
+    await this.firebaseService.signin(email,pass)
+    if(this.firebaseService.isLoggedIn)
+    this.isSignedIn = true
   }
 
-  login(){
-    // console.log('Email: ${this.email} Password: ${this.pass}');
-    this.auth.signInWithEmailAndPassword(this.email, this.pass).catch(error=>console.log(error.code)).then(result=>console.log(result));
-    if(this.email)
-    this.router.navigateByUrl('/customers');
+  handleLogout(){
+    this.isSignedIn = false
   }
+ 
 }
