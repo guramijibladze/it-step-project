@@ -20,6 +20,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { TableComponent } from './customers/table/table.component';
 import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 
 // import { ReactiveFormsModule } from '@angular/forms';
 
@@ -45,7 +47,8 @@ import { AngularFireModule } from '@angular/fire';
     NoopAnimationsModule,
     FontAwesomeModule,
     NgbModule,
-    AngularFireModule.initializeApp(environment.firebase)
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
   ],
   providers: [CustomersService],
   bootstrap: [AppComponent]

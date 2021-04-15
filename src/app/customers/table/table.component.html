@@ -21,32 +21,32 @@
             <th scope="row">{{ num + 1 }}</th>
             <td class="w-25">
               <img
-                *ngIf="!tableEdit"
+                *ngIf="!tableEdit || showCustomer.key !== i.key"
                 src="{{ i.Image }}"
                 class="img-fluid img-thumbnail"
                 alt="Sheep"
               />
-              <input *ngIf="tableEdit" type="text" [(ngModel)]="i.Image" />
+              <input *ngIf="tableEdit && showCustomer.key === i.key" type="text" [(ngModel)]="i.Image" />
             </td>
             <td>
-              <p *ngIf="!tableEdit">{{ i.name }}</p>
-              <input *ngIf="tableEdit" type="text" [(ngModel)]="i.name" />
+              <p *ngIf="!tableEdit || showCustomer.key !== i.key">{{ i.name }}</p>
+              <input *ngIf="tableEdit && showCustomer.key === i.key" type="text" [(ngModel)]="i.name" />
             </td>
             <td>
-              <p *ngIf="!tableEdit">{{ i.HotelAddress }}</p>
+              <p *ngIf="!tableEdit || showCustomer.key !== i.key">{{ i.HotelAddress }}</p>
               <input
-                *ngIf="tableEdit"
+                *ngIf="tableEdit && showCustomer.key === i.key"
                 type="text"
                 [(ngModel)]="i.HotelAddress"
               />
             </td>
             <td>
-              <p *ngIf="!tableEdit">{{ i.City }}</p>
-              <input *ngIf="tableEdit" type="text" [(ngModel)]="i.City" />
+              <p *ngIf="!tableEdit || showCustomer.key !== i.key">{{ i.City }}</p>
+              <input *ngIf="tableEdit && showCustomer.key === i.key" type="text" [(ngModel)]="i.City" />
             </td>
             <td>
-              <p *ngIf="!tableEdit">{{ i.Descrption }}</p>
-              <input *ngIf="tableEdit" type="text" [(ngModel)]="i.Descrption" />
+              <p *ngIf="!tableEdit || showCustomer.key !== i.key">{{ i.Descrption }}</p>
+              <input *ngIf="tableEdit && showCustomer.key === i.key" type="text" [(ngModel)]="i.Descrption" />
             </td>
             <td>
               <button
@@ -59,14 +59,14 @@
               <button
                 type="button"
                 class="btn btn-warning"
-                (click)="editTableRow()"
+                (click)="editTableRow(i)"
               >
                 <i class="far fa-edit text-white"></i>
               </button>
               <button
                 type="button"
                 class="btn btn-danger"
-                (click)="deleteCustomer(i.id)"
+                (click)="deleteCustomer(i.key)"
               >
                 <i class="far fa-trash-alt"></i>
               </button>

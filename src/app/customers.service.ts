@@ -24,7 +24,8 @@ export class CustomersService {
   }
 
   setCustomers(customer:any){
-    this.customers.push(customer)
+    this.customers.push(customer);
+    console.log(this.customers)
   }
 
   deleteCustomer(id: number){
@@ -32,9 +33,7 @@ export class CustomersService {
     console.log(filteredCustomers);
     this.customers = filteredCustomers;
     console.log(this.customers)
-
   }
-
 
 }
 
