@@ -3,6 +3,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import { servicesVersion } from 'typescript';
 import { FirebaseService } from '../firebase.service';
+import { Router } from  '@angular/router';
 
 @Component({
   selector: 'app-customers',
@@ -17,14 +18,19 @@ export class CustomersComponent implements OnInit {
   product:{name:string, HotelAddress:string, City:string, Descrption:string, Image: string, id: any} =
   {name:'', HotelAddress: '', City:'', Descrption:'', Image: '', id: +Math.floor(Math.random()*1000) }
 
-  constructor(private modalService: NgbModal, public service: CustomersService, public firebaseService: FirebaseService) {
+  constructor(private modalService: NgbModal, public service: CustomersService, public firebaseService: FirebaseService,private router: Router) {
     this.customers = service.getCustomers();
     this.allCustomers = this.customers.length;
    }
 
    logout(){
     this.firebaseService.logout()
-    this.isLogout.emit()
+    this.router.navigate(['/'])
+    .then(nav => {
+      console.log(nav); // true if navigation is successful
+    }, err => {
+      console.log(err) // when there's an error
+    });
   }
 
 

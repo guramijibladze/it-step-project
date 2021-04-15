@@ -20,6 +20,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { TableComponent } from './customers/table/table.component';
 import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
+import { CustomFormsModule } from 'ngx-custom-validators';
+import { NavigationComponent } from './navigation/navigation.component';
 
 // import { ReactiveFormsModule } from '@angular/forms';
 
@@ -34,6 +36,7 @@ import { AngularFireModule } from '@angular/fire';
     SignUpComponent,
     CustomersComponent,
     TableComponent,
+    NavigationComponent,
 
   ],
   imports: [
@@ -45,7 +48,8 @@ import { AngularFireModule } from '@angular/fire';
     NoopAnimationsModule,
     FontAwesomeModule,
     NgbModule,
-    AngularFireModule.initializeApp(environment.firebase)
+    AngularFireModule.initializeApp(environment.firebase),
+    CustomFormsModule
   ],
   providers: [CustomersService],
   bootstrap: [AppComponent]
