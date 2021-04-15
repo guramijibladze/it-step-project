@@ -24,8 +24,8 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   
   }
-  async onSignin(email:string,pass:string){
-    await this.firebaseService.signin(email,pass)
+   onSignin(){
+    this.firebaseService.signin(this.email,this.pass)
     if(this.firebaseService.isLoggedIn)
     this.isSignedIn = true
   }

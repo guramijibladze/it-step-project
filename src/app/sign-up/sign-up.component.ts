@@ -25,16 +25,11 @@ export class SignUpComponent implements OnInit {
   }
 
   onSubmit(){
-    // if( this.pass == this.confirmpassword ){
-    //   // console.log("password is  valid")
-    //   this.auth.createUserWithEmailAndPassword(this.email, this.pass).catch(error=>console.log(error.code)).then(result=>console.log(result));
-    // }else{
-    //   console.log("password is not valid")
-    // }
   }
 
-  async onSignup(email:string,pass:string){
-    await this.firebaseService.signup(email,pass)
+   onSignup(){
+    this.firebaseService.signup(this.email, this.pass)
+    //  console.log(this.email, this.pass);
     if(this.firebaseService.isLoggedIn)
     this.isSignedIn = true
   }
