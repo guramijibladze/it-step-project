@@ -40,12 +40,11 @@ export class SignUpComponent implements OnInit {
     this.isSignedIn = false
   }
 
- 
+
    onSignup(form:any){
     this.firebaseService.signup(this.model.email, this.model.password)
     console.log(this.model.confirmpassword)
     if(this.firebaseService.isLoggedIn)
-    
     this.isSignedIn = true
   }
 
