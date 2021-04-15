@@ -23,6 +23,9 @@ export class User {
 export class SignUpComponent implements OnInit {
   faArrowLeft = faArrowLeft;
   registerForm!: FormGroup;
+  email!:string;
+  pass!:string;
+  confirmpassword!:string;
   // password!:any;
 
   model = new User();
