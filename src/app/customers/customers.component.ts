@@ -7,6 +7,7 @@ import { servicesVersion } from 'typescript';
 import { FirebaseService } from '../firebase.service';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { Router } from  '@angular/router';
 
 @Component({
   selector: 'app-customers',
@@ -39,7 +40,9 @@ export class CustomersComponent implements OnInit {
   constructor(
     private modalService: NgbModal,
     public firebaseService: FirebaseService,
-  ) {}
+    private router: Router
+  ) {
+  }
 
 
   // download data from firebase
@@ -63,8 +66,13 @@ export class CustomersComponent implements OnInit {
   }
 
   logout() {
-    this.firebaseService.logout();
-    this.isLogout.emit();
+    this.firebaseService.logout()
+    this.router.navigate(['/'])
+    .then(nav => {
+      console.log(nav); // true if navigation is successful
+    }, err => {
+      console.log(err) // when there's an error
+    });
   }
 
   ngAfterContentChecked() {
@@ -93,7 +101,7 @@ export class CustomersComponent implements OnInit {
 
   addFile() {
     console.log(this.product);
-    this.firebaseService.sendMessage(this.product);
+    this.firebaseService.addCustomer(this.product);
     this.product = {
       name: '',
       HotelAddress: '',

@@ -4,44 +4,58 @@ import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 // Firebase Realtime Database imports
-import { AngularFireDatabase, AngularFireList  } from '@angular/fire/database';
-
+import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
 })
 export class FirebaseService {
   isLoggedIn = false;
-  messages: any =[];
+  messages: any = [];
   customersRef: AngularFireList<Customer>;
-  private dbPath = 'messages';
+  email!: string;
+  pass!: string;
 
   constructor(
     public firebaseAuth: AngularFireAuth,
-    private realtimeDb: AngularFireDatabase
+    private realtimeDb: AngularFireDatabase,
+    private router: Router
   ) {
     this.customersRef = realtimeDb.list('messages');
   }
 
-  async signin(email: string, pass: string) {
-    await this.firebaseAuth
-      .signInWithEmailAndPassword(email, pass)
-      .then((res) => {
-        this.isLoggedIn = true;
-        localStorage.setItem('user', JSON.stringify(res.user));
-      });
+  signin(email: string, pass: string) {
+    this.firebaseAuth.signInWithEmailAndPassword(email, pass).then((res) => {
+      this.isLoggedIn = true;
+      localStorage.setItem('user', JSON.stringify(res.user));
+      this.router.navigate(['/customers']).then(
+        (nav) => {
+          console.log(nav); // true if navigation is successful
+        },
+        (err) => {
+          console.log(err); // when there's an error
+        }
+      );
+    });
   }
-  async signup(email: string, pass: string) {
-    await this.firebaseAuth
+
+  signup(email: string, pass: string) {
+    this.firebaseAuth
       .createUserWithEmailAndPassword(email, pass)
       .then((res) => {
         this.isLoggedIn = true;
         localStorage.setItem('user', JSON.stringify(res.user));
       });
   }
+
   logout() {
     this.firebaseAuth.signOut();
     localStorage.removeItem('user');
+  }
+
+  addCustomer(customer: any) {
+    this.realtimeDb.list('messages').push(customer);
   }
 
   getCustomersList(): AngularFireList<Customer> {
@@ -52,15 +66,7 @@ export class FirebaseService {
     return this.customersRef.update(key, value);
   }
 
-  deleteCustomer(key: string): Promise<void>{
-    return this.customersRef.remove(key)
-  }
-
-
-  sendMessage(customer: any) {
-    this.realtimeDb
-      .list('messages')
-      .push(customer);
-    // this.realtimeDb.object('messages').update({ last_updated_at: currTime });
+  deleteCustomer(key: string): Promise<void> {
+    return this.customersRef.remove(key);
   }
 }

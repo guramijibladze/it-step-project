@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { Router } from  '@angular/router';
+
 import { FormBuilder, FormGroup, Validators } from  '@angular/forms';
 import { FirebaseService } from '../firebase.service';
 
@@ -24,8 +24,8 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   
   }
-  async onSignin(email:string,pass:string){
-    await this.firebaseService.signin(email,pass)
+   onSignin(){
+    this.firebaseService.signin(this.email,this.pass)
     if(this.firebaseService.isLoggedIn)
     this.isSignedIn = true
   }
