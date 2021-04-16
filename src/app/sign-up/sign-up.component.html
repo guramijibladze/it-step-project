@@ -4,6 +4,13 @@
         <div class="register-div row justify-content-center  p-3 ">
             <section class="border rounded col-12 col-sm-6 col-md-6 col-lg-4">
 
+                <!-- successful registration message -->
+                <div class="container successMessage " *ngIf="message">
+                    <div class="alert alert-success text-center" role="alert">
+                        account success registration !!!
+                    </div>
+                </div>
+
                 <form  class="form-container" #userForm="ngForm" 
                 (ngSubmit)="userForm.form.valid && onSignup(userForm)">
                 
@@ -97,7 +104,10 @@
                     </div>
                 </form>
             </section>
-            
+
         </div>
 </div>
+
+
+
 

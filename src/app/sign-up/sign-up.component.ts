@@ -4,6 +4,8 @@ import { FormGroup, FormControl, FormBuilder, Validators  } from '@angular/forms
 import { AngularFireAuth } from '@angular/fire/auth'
 import { FirebaseService } from '../firebase.service';
 import { CustomValidators } from 'ngx-custom-validators';
+import { Router } from '@angular/router';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 
 export class User {
@@ -30,8 +32,10 @@ export class SignUpComponent implements OnInit {
 
   model = new User();
   isSignedIn = false
+  message!:boolean;
 
-  constructor(public firebaseService : FirebaseService, private formBuilder: FormBuilder) { }
+  constructor(public firebaseService : FirebaseService, private formBuilder: FormBuilder,
+    private router: Router) { }
 
   ngOnInit(): void {
     if(localStorage.getItem('user')!== null)
@@ -43,9 +47,21 @@ export class SignUpComponent implements OnInit {
 
    onSignup(form:any){
     this.firebaseService.signup(this.model.email, this.model.password)
-    console.log(this.model.confirmpassword)
     if(this.firebaseService.isLoggedIn)
+    
     this.isSignedIn = true
+    this.message = true
+    // this.openVerticallyCentered()
+    setTimeout(() => { 
+      this.message = false;
+      this.router.navigate(['/'])
+      
+      },
+       2000);
   }
 
+  // openVerticallyCentered(content:any) {
+  //   this.modalService.open(content, { centered: true });
+  // }
+ 
 }

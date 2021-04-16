@@ -42,6 +42,7 @@ export class FirebaseService {
       .then((res) => {
         this.isLoggedIn = true;
         localStorage.setItem('user', JSON.stringify(res.user));
+        // console.log(this.isLoggedIn);
       });
   }
 

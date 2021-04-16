@@ -38,7 +38,7 @@ import { NavigationComponent } from './navigation/navigation.component';
     SignUpComponent,
     CustomersComponent,
     TableComponent,
-    NavigationComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,
