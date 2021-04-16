@@ -24,6 +24,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { CustomFormsModule } from 'ngx-custom-validators';
 import { NavigationComponent } from './navigation/navigation.component';
+import { DetailInfoComponent } from './detail-info/detail-info.component';
 // import { ReactiveFormsModule } from '@angular/forms';
 
 
@@ -38,7 +39,8 @@ import { NavigationComponent } from './navigation/navigation.component';
     SignUpComponent,
     CustomersComponent,
     TableComponent,
-    NavigationComponent
+    NavigationComponent,
+    DetailInfoComponent
   ],
   imports: [
     BrowserModule,
