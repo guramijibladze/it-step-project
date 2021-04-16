@@ -16,6 +16,7 @@ export class FirebaseService {
   customersRef: AngularFireList<Customer>;
   email!: string;
   pass!: string;
+  user!:any;
 
   constructor(public firebaseAuth : AngularFireAuth, private router: Router, 
     private realtimeDb: AngularFireDatabase) { 
@@ -25,7 +26,7 @@ export class FirebaseService {
    signin(email: string, pass : string){
      this.firebaseAuth.signInWithEmailAndPassword(email,pass)
     .then(res=>{
-      this.isLoggedIn = true
+      // this.isLoggedIn = true
       localStorage.setItem('user',JSON.stringify(res.user))
       this.router.navigate(['/customers'])
       .then(nav => {
@@ -42,7 +43,13 @@ export class FirebaseService {
       .then((res) => {
         this.isLoggedIn = true;
         localStorage.setItem('user', JSON.stringify(res.user));
-        // console.log(this.isLoggedIn);
+        this.user = res.user;
+        // console.log(this.user);
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorMessage);
       });
   }
 

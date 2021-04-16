@@ -116,15 +116,5 @@ export class CustomersComponent implements OnInit {
     this.modalService.open(deleteContent, { centered: true });
   }
 
-  deleteArrIem(deleteItem: any) {
-    // deleteItem - 1;
-    // if (this.customers.length == 0) {
-    //   alert('list is empty');
-    // } else {
-    //   // this.array.splice(deleteItem, 1);
-    //   delete this.customers[deleteItem];
-    //   deleteItem = '';
-    // }
-    // console.log(deleteItem);
-  }
+
 }

@@ -44,8 +44,6 @@ export class TableComponent implements OnInit {
           });
         });
       }
-
-
   }
 
   deleteCustomer(key: string) {
