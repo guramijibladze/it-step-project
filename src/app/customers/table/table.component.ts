@@ -4,7 +4,9 @@ import { CustomersService } from './../../customers.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NgbRatingConfig } from '@ng-bootstrap/ng-bootstrap';
-// import { }
+import { Router } from '@angular/router';
+import {ActivatedRoute} from "@angular/router";
+
 
 @Component({
   selector: 'app-table',
@@ -15,10 +17,12 @@ export class TableComponent implements OnInit {
   @Input() item: any = [];
   tableEdit: boolean = false;
   showCustomer!: Customer;
+  id!:any;
 
   constructor(
     private modalService: NgbModal,
-    public firebaseService: FirebaseService
+    public firebaseService: FirebaseService,
+    private router: Router,
   ) {}
 
   openLg(content: any) {
@@ -48,8 +52,15 @@ export class TableComponent implements OnInit {
 
   deleteCustomer(key: string) {
     this.firebaseService.deleteCustomer(key);
+    // console.log(key);
   }
 
   ngOnInit(): void {
+  }
+
+  // get id in ordert to identify the product
+  goDetailInfo(ind:any){
+    this.router.navigate(['/detailInfo', ind.id]);
+    // console.log(ind.id)
   }
 }

@@ -17,6 +17,7 @@ export class FirebaseService {
   email!: string;
   pass!: string;
   user!:any;
+  getInfoId!:any;
 
   constructor(public firebaseAuth : AngularFireAuth, private router: Router, 
     private realtimeDb: AngularFireDatabase) { 
@@ -62,11 +63,14 @@ export class FirebaseService {
     this.realtimeDb.list('messages').push(customer);
   }
 
+  
+
   getCustomersList(): AngularFireList<Customer> {
     return this.customersRef;
   }
 
   updateCustomer(key: string, value: any): Promise<void> {
+    // console.log(this.customersRef);
     return this.customersRef.update(key, value);
   }
 

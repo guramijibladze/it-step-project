@@ -7,10 +7,10 @@ import { DetailInfoComponent } from './detail-info/detail-info.component';
 
 const routes: Routes = [
   // { path: '', redirectTo: "**", pathMatch: 'full'},
-  {path: 'register', component: SignUpComponent },
+  { path: 'register', component: SignUpComponent },
   { path: '', component: LoginComponent },
   { path: 'customers', component: CustomersComponent },
-  {path: 'detailInfo', component: DetailInfoComponent }
+  { path: 'detailInfo/:id', component: DetailInfoComponent }
 ];
 
 @NgModule({

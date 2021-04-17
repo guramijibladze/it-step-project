@@ -42,6 +42,29 @@
         </div>
     </section>
 
+    <!-- Hotel Photo Gallery -->
+    <section>
+        <div class="container mt-5">
+            <ngb-carousel *ngIf="images">
+                <ng-template ngbSlide>
+                  <div class="picsum-img-wrapper">
+                    <img [src]="images[0]" alt="Random first slide">
+                  </div>
+                </ng-template>
+                <ng-template ngbSlide>
+                  <div class="picsum-img-wrapper">
+                    <img [src]="images[1]" alt="Random second slide">
+                  </div>
+                </ng-template>
+                <ng-template ngbSlide>
+                  <div class="picsum-img-wrapper">
+                    <img [src]="images[2]" alt="Random third slide">
+                  </div>
+                </ng-template>
+              </ngb-carousel>
+        </div>
+    </section>
+
 
     <section>
         <div class="container border rounded pt-3" style="background-color: rgb(62, 159, 204); 

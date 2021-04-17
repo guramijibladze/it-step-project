@@ -34,7 +34,7 @@ export class CustomersComponent implements OnInit {
     City: '',
     Descrption: '',
     Image: '',
-    id: +Math.floor(Math.random() * 1000),
+    id: null
   };
 
   constructor(
@@ -100,7 +100,7 @@ export class CustomersComponent implements OnInit {
   }
 
   addFile() {
-    console.log(this.product);
+    this.product.id = +Math.floor(Math.random() * 1000);
     this.firebaseService.addCustomer(this.product);
     this.product = {
       name: '',

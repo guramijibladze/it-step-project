@@ -6,8 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./detail-info.component.css']
 })
 export class DetailInfoComponent implements OnInit {
+  images = [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/1200/500`);
 
-  constructor() { }
+  constructor() { 
+  }
 
   ngOnInit(): void {
   }
