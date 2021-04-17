@@ -61,16 +61,17 @@ export class FirebaseService {
 
   addCustomer(customer: any) {
     this.realtimeDb.list('messages').push(customer);
+    
   }
 
   
 
   getCustomersList(): AngularFireList<Customer> {
+    console.log(this.customersRef)
     return this.customersRef;
   }
 
   updateCustomer(key: string, value: any): Promise<void> {
-    // console.log(this.customersRef);
     return this.customersRef.update(key, value);
   }
 

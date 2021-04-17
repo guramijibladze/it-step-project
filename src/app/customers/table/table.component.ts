@@ -5,7 +5,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NgbRatingConfig } from '@ng-bootstrap/ng-bootstrap';
 import { Router } from '@angular/router';
-import {ActivatedRoute} from "@angular/router";
+
 
 
 @Component({
@@ -30,7 +30,7 @@ export class TableComponent implements OnInit {
   }
 
   editTableRow(customer: Customer) {
-    console.log(customer)
+    // console.log(customer)
     this.tableEdit = !this.tableEdit;
     this.showCustomer = customer
     if (!this.tableEdit) {
@@ -60,7 +60,7 @@ export class TableComponent implements OnInit {
 
   // get id in ordert to identify the product
   goDetailInfo(ind:any){
-    this.router.navigate(['/detailInfo', ind.id]);
-    // console.log(ind.id)
+    this.router.navigate(['/detailInfo', ind]);
+
   }
 }
