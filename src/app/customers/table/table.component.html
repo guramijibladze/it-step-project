@@ -45,7 +45,10 @@
               <input *ngIf="tableEdit && showCustomer.key === i.key" type="text" [(ngModel)]="i.City" />
             </td>
             <td>
-              <p *ngIf="!tableEdit || showCustomer.key !== i.key">{{ i.Descrption }}</p>
+              <div id="overflowTest" *ngIf="!tableEdit || showCustomer.key !== i.key">
+                {{ i.Descrption }}
+              </div>
+              
               <input *ngIf="tableEdit && showCustomer.key === i.key" type="text" [(ngModel)]="i.Descrption" />
             </td>
             <td>

@@ -51,9 +51,7 @@ export class DetailInfoComponent implements OnInit {
 
   ngOnInit(): void {
     this.index = this.route.snapshot.paramMap.get("id");
-    // this.obj = JSON.parse(this.id);
-    // this.obj.push(this.customers[this.index]);
-    console.log(this.customers[this.index].City)
+    // console.log(this.customers[this.index].City)
     this.City = this.customers[this.index].City;
     this.HotelName = this.customers[this.index].name;
     this.HotelAddress = this.customers[this.index].HotelAddress;

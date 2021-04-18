@@ -6,9 +6,7 @@
           <h2>Your Hotels</h2>
         </div>
         <div class="add-costumers-btn col-sm-6 p-4 text-right">
-          <button class="btn btn-outline-success p-2" (click)="openLg(mymodal)">
-            ADD CUSTOMER
-          </button>
+          
 
           <!-- Modal -->
           <ng-template #mymodal let-modal>
@@ -93,21 +91,11 @@
       </div>
     </div>
 
-    <div class="section2 mt-3">
+    <div class="section2 mt-5">
       <div class="container">
         <div class="row">
-          <div class="col-sm-4"></div>
 
-          <div class="col-sm-4 p-2" style="text-align: center">
-            <span
-              ><strong>all Hotels: ({{ allCustomers }})</strong>
-            </span>
-          </div>
-
-          <!-- <p>{{product.name}}</p>
-                    <p>{{HotelAddress}}</p> -->
-          <div class="col-sm-4">
-            <form>
+          <div class="col-md-4 col-sm-12">
             <div class="input-group rounded">
               <span class="input-group-text border-0" id="search-addon">
                 <button class="btn btn-sm" (click)="searchHotel(searchValue.value)"><i class="fas fa-search"></i></button>
@@ -121,8 +109,28 @@
                 #searchValue
               />
             </div>
-          </form>
           </div>
+
+          <div class="col-md-4 col-sm-12 p-2" style="text-align: center">
+            <span
+              ><strong>all Hotels: ({{ allCustomers }})</strong>
+            </span>
+          </div>
+
+          <div class="col-md-4 col-sm-12">
+            <div class="row" >
+              <div class="ml-5 mr-1">
+                <button class="btn btn-outline-success p-2" (click)="openLg(mymodal)">
+                  ADD CUSTOMER
+                </button>
+              </div>
+              
+              <div class="ml-2">
+                <button class="btn btn-outline-danger p-2" (click)="logout()">Logout</button>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
@@ -132,7 +140,7 @@
   </div>
 </div>
 
-<button (click)="logout()">Logout</button>
+
 
 <div class="container mt-5">
   <!-- <div *ngFor="let prod of product;">{{prod.name}}</div> -->
