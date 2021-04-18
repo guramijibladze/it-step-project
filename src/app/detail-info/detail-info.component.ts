@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { FirebaseService } from '../firebase.service';
 import { map } from 'rxjs/operators';
 import { Customer } from './../Customer';
+import { json } from 'ngx-custom-validators/src/app/json/validator';
 
 
 @Component({
@@ -12,7 +13,13 @@ import { Customer } from './../Customer';
 })
 export class DetailInfoComponent implements OnInit {
   images = [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/1200/500`);
-  id!:any;
+  index!:any;
+  obj: any = [];
+  City!:any;
+  HotelAddress!:any;
+  HotelName!:any;
+  Description!:any;
+
   customers: Array<Customer> = [];
   currentproduct!:any;
 
@@ -41,10 +48,16 @@ export class DetailInfoComponent implements OnInit {
       );
   }
 
+
   ngOnInit(): void {
-    this.id = this.route.params.subscribe( params => console.log(params) );
-    this.currentproduct = this.customers
-    // console.log(this.customers)
+    this.index = this.route.snapshot.paramMap.get("id");
+    // this.obj = JSON.parse(this.id);
+    // this.obj.push(this.customers[this.index]);
+    console.log(this.customers[this.index].City)
+    this.City = this.customers[this.index].City;
+    this.HotelName = this.customers[this.index].name;
+    this.HotelAddress = this.customers[this.index].HotelAddress;
+    this.Description = this.customers[this.index].Descrption;
   }
 
 }

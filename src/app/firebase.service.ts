@@ -67,7 +67,7 @@ export class FirebaseService {
   
 
   getCustomersList(): AngularFireList<Customer> {
-    console.log(this.customersRef)
+    // console.log(this.customersRef)
     return this.customersRef;
   }
 
