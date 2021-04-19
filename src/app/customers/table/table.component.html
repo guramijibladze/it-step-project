@@ -1,4 +1,3 @@
-<!-- <p *ngFor='let i of item'>{{i.name}}</p> -->
 
 <div class="container my-5">
   <div class="row">
@@ -16,7 +15,7 @@
           </tr>
         </thead>
 
-        <tbody>
+        <tbody  >
           <tr *ngFor="let i of item; index as num">
             <th scope="row">{{ num + 1 }}</th>
             <td class="w-25">
@@ -52,35 +51,46 @@
               <input *ngIf="tableEdit && showCustomer.key === i.key" type="text" [(ngModel)]="i.Descrption" />
             </td>
             <td>
-              <button
-                type="button"
-                class="btn btn-primary"
-                (click)="openLg(mymodal)"
-              >
-                <i class="far fa-eye"></i>
-              </button>
-              <button
-                type="button"
-                class="btn btn-warning"
-                (click)="editTableRow(i)"
-              >
-                <i class="far fa-edit text-white"></i>
-              </button>
-              <button
-                type="button"
-                class="btn btn-danger"
-                (click)="deleteCustomer(i.key)"
-              >
-                <i class="far fa-trash-alt"></i>
-              </button>
-
-              <div>
-                <button class="btn btn-info mt-2 ml-2" 
-                (click)="goDetailInfo(num)">
-                  Detail Info
+              <div class="d-flex flex-column">
+                  <button
+                  type="button"
+                  class="btn btn-primary"
+                  (click)="openLg(mymodal)"
+                  placement="right"
+                  ngbTooltip="View">
+                
+                  <i class="far fa-eye"></i>
                 </button>
+
+                <button
+                  type="button"
+                  class="btn btn-warning"
+                  (click)="editTableRow(i)"
+                  placement="right"
+                  ngbTooltip="Edit">
+                
+                  <i class="far fa-edit text-white"></i>
+                </button>
+
+                <button
+                  type="button"
+                  class="btn btn-danger"
+                  (click)="deleteCustomer(i.key)"
+                  placement="right"
+                  ngbTooltip="Delete Item">
+                
+                  <i class="far fa-trash-alt"></i>
+                </button>
+
+                <button class="btn btn-info" 
+                (click)="goDetailInfo(num)"
+                placement="right"
+                ngbTooltip="Detail Info">
+                  
+                  <i class="fas fa-info"></i>
+                </button>
+
               </div>
-             
             </td>
 
             <!--- modal -->
@@ -143,3 +153,4 @@
     </div>
   </div>
 </div>
+

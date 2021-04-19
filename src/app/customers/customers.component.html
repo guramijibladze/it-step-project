@@ -1,10 +1,15 @@
 <div class="container" >
-  <div class="add-costumers">
+
+  <div class="mt-5">
+    <app-navigation></app-navigation>
+  </div>
+  
+  <div class="add-costumers" style="padding-bottom: 50px;">
     <div class="section1">
       <div class="row">
-        <div class="title col-sm-6 p-4 text-left">
+        <!-- <div class="title col-sm-6 p-4 text-left">
           <h2>Your Hotels</h2>
-        </div>
+        </div> -->
         <div class="add-costumers-btn col-sm-6 p-4 text-right">
           
 
@@ -91,6 +96,7 @@
       </div>
     </div>
 
+    <!-- Add customers Serach logout -->
     <div class="section2 mt-5">
       <div class="container">
         <div class="row">
@@ -134,16 +140,39 @@
         </div>
       </div>
     </div>
-
-  
-
+    <!-- ----- -->
+    
   </div>
 </div>
 
-
-
-<div class="container mt-5">
-  <!-- <div *ngFor="let prod of product;">{{prod.name}}</div> -->
-  <!-- <p *ngFor='let i of product;'></p> -->
+<div id="table" class=" mt-5">
   <app-table [item]="customers"></app-table>
 </div>
+
+
+<footer class="page-footer bg-dark mt-5" >
+  <div class="footer-copyright text-white py-3">
+    
+    <div class="d-flex justify-content-around align-items-center">
+      <div class="d-flex-column">
+        <div>@2021 Copyright</div>
+        <div class="row py-2 align-items-center">
+          <i class="fas fa-phone-alt px-3"></i>
+          <p class="my-2">+995 571 17 77 71</p>
+        </div>
+      </div>
+
+      <img class="img-fluid" src="../../assets/media/logo1.png" alt="no_logo" />
+
+      <div>
+        <div>Social media</div>
+        <hr />
+        <div class="row justify-content-around">
+          <div><i class="fab fa-instagram"></i></div>
+          <div><i class="fab fa-facebook"></i></div>
+          <div><i class="fab fa-twitter"></i></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer> 

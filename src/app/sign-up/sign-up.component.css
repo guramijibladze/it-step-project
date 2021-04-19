@@ -4,6 +4,10 @@ section{
     top: 15vh;
 }
 
+.parr{
+    position: relative;
+    min-height: 90.3vh;
+}
 
 input[type="text"]::placeholder {  
     padding-left: 10px; 
@@ -29,3 +33,10 @@ input[type="number"]::placeholder{
 .successMessage{
     margin-top: 50px;
 }
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;           
+  }
