@@ -12,9 +12,10 @@ import { Router } from '@angular/router';
   selector: 'app-table',
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.css'],
+  providers: [NgbRatingConfig]
 })
 export class TableComponent implements OnInit {
-  currentRate = 6;
+  // currentRate = 6;
   @Input() item: any = [];
   tableEdit: boolean = false;
   showCustomer!: Customer;
@@ -24,7 +25,11 @@ export class TableComponent implements OnInit {
     private modalService: NgbModal,
     public firebaseService: FirebaseService,
     private router: Router,
-  ) {}
+    config: NgbRatingConfig
+  ) {
+    config.max = 10;
+    config.readonly = true;
+  }
 
   openLg(content: any) {
     this.modalService.open(content, { size: 'lg' });
