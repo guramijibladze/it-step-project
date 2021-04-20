@@ -60,6 +60,7 @@ export class TableComponent implements OnInit {
 
   // get id in ordert to identify the product
   goDetailInfo(ind:number){
+    
     this.router.navigate(['/detailInfo', ind]);
     // console.log(ind);
   }

@@ -19,11 +19,11 @@ export class FirebaseService {
   user!:any;
   getInfoId!:any;
 
-  constructor(public firebaseAuth : AngularFireAuth, private router: Router, 
-    private realtimeDb: AngularFireDatabase) { 
+  constructor(public firebaseAuth : AngularFireAuth, private router: Router,
+    private realtimeDb: AngularFireDatabase) {
       this.customersRef = realtimeDb.list('messages');
     }
-  
+
    signin(email: string, pass : string){
      this.firebaseAuth.signInWithEmailAndPassword(email,pass)
     .then(res=>{
@@ -37,7 +37,7 @@ export class FirebaseService {
       });
     });
   }
-  
+
   signup(email: string, pass: string) {
     this.firebaseAuth
       .createUserWithEmailAndPassword(email, pass)
@@ -61,10 +61,7 @@ export class FirebaseService {
 
   addCustomer(customer: any) {
     this.realtimeDb.list('messages').push(customer);
-    
   }
-
-  
 
   getCustomersList(): AngularFireList<Customer> {
     // console.log(this.customersRef)

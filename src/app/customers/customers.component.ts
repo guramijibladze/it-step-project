@@ -7,7 +7,7 @@ import { servicesVersion } from 'typescript';
 import { FirebaseService } from '../firebase.service';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Router } from  '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-customers',
@@ -28,22 +28,37 @@ export class CustomersComponent implements OnInit {
     Descrption: string;
     Image: string;
     id: any;
+    rooms?: any[];
   } = {
     name: '',
     HotelAddress: '',
     City: '',
     Descrption: '',
     Image: '',
-    id: null
+    id: null,
+    rooms: [
+      {
+        roomNumber: 1,
+        roomPlaces: 4,
+        amenities: ['tv', 'conditioner'],
+        price: 24,
+        taken: false,
+      },
+      {
+        roomNumber: 2,
+        roomPlaces: 2,
+        amenities: ['tv', 'conditioner', 'kitchen'],
+        price: 400,
+        taken: true
+      },
+    ],
   };
 
   constructor(
     private modalService: NgbModal,
     public firebaseService: FirebaseService,
     private router: Router
-  ) {
-  }
-
+  ) {}
 
   // download data from firebase
   retrieveAllCustomers() {
@@ -66,18 +81,20 @@ export class CustomersComponent implements OnInit {
   }
 
   logout() {
-    this.firebaseService.logout()
-    this.router.navigate(['/'])
-    .then(nav => {
-      console.log(nav); // true if navigation is successful
-    }, err => {
-      console.log(err) // when there's an error
-    });
+    this.firebaseService.logout();
+    this.router.navigate(['/']).then(
+      (nav) => {
+        console.log(nav); // true if navigation is successful
+      },
+      (err) => {
+        console.log(err); // when there's an error
+      }
+    );
   }
 
   ngAfterContentChecked() {
-    this.allCustomers = this.customers.length
-
+    this.allCustomers = this.customers.length;
+    console.log(this.customers);
   }
 
   ngOnInit(): void {
@@ -87,7 +104,7 @@ export class CustomersComponent implements OnInit {
   searchHotel(input: string) {
     if (input === '') {
       this.retrieveAllCustomers();
-    }else{
+    } else {
       let searchFilter = this.customers.filter((customer: any) => {
         return customer.name.toLowerCase().match(input.toLowerCase());
       });
@@ -109,12 +126,11 @@ export class CustomersComponent implements OnInit {
       Descrption: '',
       Image: '',
       id: null,
+      rooms: [],
     };
   }
 
   openVerticallyCentered(deleteContent: any) {
     this.modalService.open(deleteContent, { centered: true });
   }
-
-
 }

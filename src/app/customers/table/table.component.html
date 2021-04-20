@@ -48,7 +48,7 @@
               <div id="overflowTest" *ngIf="!tableEdit || showCustomer.key !== i.key">
                 {{ i.Descrption }}
               </div>
-              
+
               <input *ngIf="tableEdit && showCustomer.key === i.key" type="text" [(ngModel)]="i.Descrption" />
             </td>
             <td>
@@ -75,12 +75,12 @@
               </button>
 
               <div>
-                <button class="btn btn-info mt-2 ml-2" 
-                (click)="goDetailInfo(num)">
+                <button class="btn btn-info mt-2 ml-2"
+                (click)="goDetailInfo(i.key)">
                   Detail Info
                 </button>
               </div>
-             
+
             </td>
 
             <!--- modal -->
