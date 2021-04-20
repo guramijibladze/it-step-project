@@ -5,13 +5,14 @@
       <table class="table table-image">
         <thead style="background-color: rgb(179, 161, 134);">
           <tr>
-            <th scope="col"><h2><b>NUM</b></h2></th>
-            <th class="text-center" scope="col"><h2><b>Image</b></h2></th>
-            <th scope="col"><h2><b>Hotel Name</b></h2></th>
-            <th scope="col"><h2><b>Hotel Address</b></h2></th>
-            <th scope="col"><h2><b>City</b></h2></th>
-            <th scope="col"><h2><b>Description</b></h2></th>
-            <th scope="col"><h2><b>Actions</b></h2></th>
+            <th scope="col"><h3><b>NUM</b></h3></th>
+            <th class="text-center" scope="col"><h3><b>Image</b></h3></th>
+            <th scope="col"><h3><b>Hotel Name</b></h3></th>
+            <th scope="col"><h3><b>Hotel Address</b></h3></th>
+            <th scope="col"><h3><b>City</b></h3></th>
+            <th scope="col"><h3><b>Description</b></h3></th>
+            <th scope="col"><h3><b>Rating</b></h3></th>
+            <th scope="col"><h3><b>Actions</b></h3></th>
           </tr>
         </thead>
 
@@ -49,6 +50,13 @@
               </div>
               
               <input *ngIf="tableEdit && showCustomer.key === i.key" type="text" [(ngModel)]="i.Descrption" />
+            </td>
+            <td>
+              <!-- ng Rating modal -->
+              <ngb-rating ></ngb-rating>
+              <!-- <hr> -->
+              <!-- <pre> <b>Rate:{{currentRate}}</b></pre> -->
+
             </td>
             <td>
               <div class="d-flex flex-column">
@@ -128,9 +136,8 @@
                         </ul>
                       </div>
                       <div class="col-8">
-                        <em>Description</em>
-                        <hr />
-                        <p>{{ i.Descrption }}</p>
+                        <i class="fas fa-text-width" style="font-size: 25px;"></i>
+                        {{ i.Descrption }}
                       </div>
                     </div>
                   </div>
