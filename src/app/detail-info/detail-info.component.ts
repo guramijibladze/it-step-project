@@ -58,4 +58,5 @@ export class DetailInfoComponent implements OnInit {
     this.Description = this.customers[this.index].Descrption;
   }
 
-}
+} 
+
