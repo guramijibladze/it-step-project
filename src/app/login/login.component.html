@@ -1,4 +1,6 @@
   <div  id="login-box" class="container-fluid limiter">
+    <app-navigation></app-navigation>
+    
     <div class="container-login100">
       <div class="wrap-login100">
         <form class="login100-form validate-form" #loginForm = ngForm (ngSubmit)="onSignin()">
@@ -41,10 +43,12 @@
         </form>
       </div>
     </div>
+
+    <div id="footer">
+      <app-footer></app-footer>
+    </div>
   </div>
 
-  <!-- <div [routerLink] = {{/customers}}>Text to show</div> -->
 
-<div id="dropDownSelect1"></div>
 
 <app-customers *ngIf="isSignedIn" (isLogout)="handleLogout()"></app-customers>

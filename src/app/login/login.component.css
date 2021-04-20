@@ -1,6 +1,16 @@
 
+#login-box{
+  position: relative;
+  max-height: 100%;
+  /* min-height: 70vh!important; */
+}
 
-
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* height: 2.5rem;            */
+}
 
 
 /*---------------------------------------------*/
@@ -126,7 +136,7 @@ iframe {
 
 .container-login100 {
   width: 100%;
-  min-height: 100vh;
+  min-height: 86.1vh;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -229,7 +239,7 @@ iframe {
   background: linear-gradient(right, #21d4fd, #b721ff);
 }
 
-.focus-input100::after {
+/* .focus-input100::after {
   font-family: Poppins-Regular;
   font-size: 15px;
   color: #999999;
@@ -247,7 +257,7 @@ iframe {
   -o-transition: all 0.4s;
   -moz-transition: all 0.4s;
   transition: all 0.4s;
-}
+} */
 
 .input100:focus + .focus-input100::after {
   top: -15px;

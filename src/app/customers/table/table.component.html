@@ -1,22 +1,22 @@
-<!-- <p *ngFor='let i of item'>{{i.name}}</p> -->
 
 <div class="container my-5">
   <div class="row">
     <div class="col-12">
       <table class="table table-image">
-        <thead>
+        <thead style="background-color: rgb(179, 161, 134);">
           <tr>
-            <th scope="col">NUM</th>
-            <th scope="col">Image</th>
-            <th scope="col">Hotel Name</th>
-            <th scope="col">Hotel Address</th>
-            <th scope="col">City</th>
-            <th scope="col">Description</th>
-            <th scope="col">Actions</th>
+            <th scope="col"><h3><b>NUM</b></h3></th>
+            <th class="text-center" scope="col"><h3><b>Image</b></h3></th>
+            <th scope="col"><h3><b>Hotel Name</b></h3></th>
+            <th scope="col"><h3><b>Hotel Address</b></h3></th>
+            <th scope="col"><h3><b>City</b></h3></th>
+            <th scope="col"><h3><b>Description</b></h3></th>
+            <th scope="col"><h3><b>Rating</b></h3></th>
+            <th scope="col"><h3><b>Actions</b></h3></th>
           </tr>
         </thead>
 
-        <tbody>
+        <tbody  >
           <tr *ngFor="let i of item; index as num">
             <th scope="row">{{ num + 1 }}</th>
             <td class="w-25">
@@ -29,11 +29,11 @@
               <input *ngIf="tableEdit && showCustomer.key === i.key" type="text" [(ngModel)]="i.Image" />
             </td>
             <td>
-              <p *ngIf="!tableEdit || showCustomer.key !== i.key">{{ i.name }}</p>
+              <p *ngIf="!tableEdit || showCustomer.key !== i.key"><b>{{ i.name }}</b></p>
               <input *ngIf="tableEdit && showCustomer.key === i.key" type="text" [(ngModel)]="i.name" />
             </td>
             <td>
-              <p *ngIf="!tableEdit || showCustomer.key !== i.key">{{ i.HotelAddress }}</p>
+              <p *ngIf="!tableEdit || showCustomer.key !== i.key"><b>{{ i.HotelAddress }}</b></p>
               <input
                 *ngIf="tableEdit && showCustomer.key === i.key"
                 type="text"
@@ -41,46 +41,64 @@
               />
             </td>
             <td>
-              <p *ngIf="!tableEdit || showCustomer.key !== i.key">{{ i.City }}</p>
+              <p *ngIf="!tableEdit || showCustomer.key !== i.key"><b>{{ i.City }}</b></p>
               <input *ngIf="tableEdit && showCustomer.key === i.key" type="text" [(ngModel)]="i.City" />
             </td>
             <td>
               <div id="overflowTest" *ngIf="!tableEdit || showCustomer.key !== i.key">
-                {{ i.Descrption }}
+                <b>{{ i.Descrption }}</b>
               </div>
 
               <input *ngIf="tableEdit && showCustomer.key === i.key" type="text" [(ngModel)]="i.Descrption" />
             </td>
             <td>
-              <button
-                type="button"
-                class="btn btn-primary"
-                (click)="openLg(mymodal)"
-              >
-                <i class="far fa-eye"></i>
-              </button>
-              <button
-                type="button"
-                class="btn btn-warning"
-                (click)="editTableRow(i)"
-              >
-                <i class="far fa-edit text-white"></i>
-              </button>
-              <button
-                type="button"
-                class="btn btn-danger"
-                (click)="deleteCustomer(i.key)"
-              >
-                <i class="far fa-trash-alt"></i>
-              </button>
+              <!-- ng Rating modal -->
+              <ngb-rating [rate]="3" ></ngb-rating>
+              <!-- <hr> -->
+              <!-- <pre> <b>Rate:{{currentRate}}</b></pre> -->
 
-              <div>
-                <button class="btn btn-info mt-2 ml-2"
-                (click)="goDetailInfo(i.key)">
-                  Detail Info
+            </td>
+            <td>
+              <div class="d-flex flex-column">
+                  <button
+                  type="button"
+                  class="btn btn-primary"
+                  (click)="openLg(mymodal)"
+                  placement="right"
+                  ngbTooltip="View">
+
+                  <i class="far fa-eye"></i>
                 </button>
-              </div>
 
+                <button
+                  type="button"
+                  class="btn btn-warning"
+                  (click)="editTableRow(i)"
+                  placement="right"
+                  ngbTooltip="Edit">
+
+                  <i class="far fa-edit text-white"></i>
+                </button>
+
+                <button
+                  type="button"
+                  class="btn btn-danger"
+                  (click)="deleteCustomer(i.key)"
+                  placement="right"
+                  ngbTooltip="Delete Item">
+
+                  <i class="far fa-trash-alt"></i>
+                </button>
+
+                <button class="btn btn-info"
+                (click)="goDetailInfo(i.key)"
+                placement="right"
+                ngbTooltip="Detail Info">
+
+                  <i class="fas fa-info"></i>
+                </button>
+
+              </div>
             </td>
 
             <!--- modal -->
@@ -118,9 +136,8 @@
                         </ul>
                       </div>
                       <div class="col-8">
-                        <em>Description</em>
-                        <hr />
-                        <p>{{ i.Descrption }}</p>
+                        <i class="fas fa-text-width" style="font-size: 25px;"></i>
+                        {{ i.Descrption }}
                       </div>
                     </div>
                   </div>
@@ -143,3 +160,4 @@
     </div>
   </div>
 </div>
+

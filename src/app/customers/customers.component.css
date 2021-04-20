@@ -12,3 +12,37 @@
         text-align: center!important;
     }
 }
+
+
+hr {
+    margin-top: 0;
+    background-color: white;
+  }
+  
+  .fab {
+    font-weight: 500;
+    font-size: 20px;
+    cursor: pointer;
+    transition: font-size 0.2s;
+  }
+  
+  .fab:hover {
+    color: #118ab2;
+    font-size: 24px;
+  }
+  
+  .img-fluid{
+    width: 20%;
+    height: 100px;
+  }
+
+  .container{
+      position: relative;
+  }
+
+  footer{
+      position: absolute;
+      position: sticky;
+      bottom: 0;
+      width: 100%;
+  }

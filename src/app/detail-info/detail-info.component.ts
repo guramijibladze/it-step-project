@@ -4,6 +4,7 @@ import { FirebaseService } from '../firebase.service';
 import { map } from 'rxjs/operators';
 import { Customer, CustomerRoom } from './../Customer';
 import { json } from 'ngx-custom-validators/src/app/json/validator';
+declare var $: any;
 
 @Component({
   selector: 'app-detail-info',
@@ -11,6 +12,7 @@ import { json } from 'ngx-custom-validators/src/app/json/validator';
   styleUrls: ['./detail-info.component.css'],
 })
 export class DetailInfoComponent implements OnInit {
+
   images = [944, 1011, 984].map(
     (n) => `https://picsum.photos/id/${n}/1200/500`
   );
@@ -75,5 +77,30 @@ export class DetailInfoComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+    $('#recipeCarousel').carousel({
+      interval: 10000
+    })
+
+    $('.carousel .carousel-item').each(() =>{
+        var minPerSlide = 3;
+        var next = $(this).next();
+        if (!next.length) {
+        next = $(this).siblings(':first');
+        }
+        next.children(':first-child').clone().appendTo($(this));
+
+        for (var i=0;i<minPerSlide;i++) {
+            next=next.next();
+            if (!next.length) {
+              next = $(this).siblings(':first');
+            }
+
+            next.children(':first-child').clone().appendTo($(this));
+          }
+    });
+
   }
+
 }
+
