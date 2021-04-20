@@ -3,15 +3,15 @@
   <div class="row">
     <div class="col-12">
       <table class="table table-image">
-        <thead>
+        <thead style="background-color: rgb(179, 161, 134);">
           <tr>
-            <th scope="col">NUM</th>
-            <th scope="col">Image</th>
-            <th scope="col">Hotel Name</th>
-            <th scope="col">Hotel Address</th>
-            <th scope="col">City</th>
-            <th scope="col">Description</th>
-            <th scope="col">Actions</th>
+            <th scope="col"><h2><b>NUM</b></h2></th>
+            <th class="text-center" scope="col"><h2><b>Image</b></h2></th>
+            <th scope="col"><h2><b>Hotel Name</b></h2></th>
+            <th scope="col"><h2><b>Hotel Address</b></h2></th>
+            <th scope="col"><h2><b>City</b></h2></th>
+            <th scope="col"><h2><b>Description</b></h2></th>
+            <th scope="col"><h2><b>Actions</b></h2></th>
           </tr>
         </thead>
 
@@ -28,11 +28,11 @@
               <input *ngIf="tableEdit && showCustomer.key === i.key" type="text" [(ngModel)]="i.Image" />
             </td>
             <td>
-              <p *ngIf="!tableEdit || showCustomer.key !== i.key">{{ i.name }}</p>
+              <p *ngIf="!tableEdit || showCustomer.key !== i.key"><b>{{ i.name }}</b></p>
               <input *ngIf="tableEdit && showCustomer.key === i.key" type="text" [(ngModel)]="i.name" />
             </td>
             <td>
-              <p *ngIf="!tableEdit || showCustomer.key !== i.key">{{ i.HotelAddress }}</p>
+              <p *ngIf="!tableEdit || showCustomer.key !== i.key"><b>{{ i.HotelAddress }}</b></p>
               <input
                 *ngIf="tableEdit && showCustomer.key === i.key"
                 type="text"
@@ -40,12 +40,12 @@
               />
             </td>
             <td>
-              <p *ngIf="!tableEdit || showCustomer.key !== i.key">{{ i.City }}</p>
+              <p *ngIf="!tableEdit || showCustomer.key !== i.key"><b>{{ i.City }}</b></p>
               <input *ngIf="tableEdit && showCustomer.key === i.key" type="text" [(ngModel)]="i.City" />
             </td>
             <td>
               <div id="overflowTest" *ngIf="!tableEdit || showCustomer.key !== i.key">
-                {{ i.Descrption }}
+                <b>{{ i.Descrption }}</b>
               </div>
               
               <input *ngIf="tableEdit && showCustomer.key === i.key" type="text" [(ngModel)]="i.Descrption" />
