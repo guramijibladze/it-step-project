@@ -63,22 +63,91 @@
   </section>
 
   <section>
-    <div
-      class="container border rounded pt-3"
-      style="
-        background-color: rgb(62, 159, 204);
-        height: 60px;
-        margin-top: 80px;
-      "
-    >
-      <div class="text text-center">
-        <p style="font-size: 20px">
-          <strong>Room status</strong>
-          <button class="login100-form-btn" type="submit">Login</button>
-        </p>
+    <div class="container border rounded " style="
+      background-color: rgb(62, 159, 204);
+      height: 60px;
+      margin-top: 80px;">
+      <div class="row ">
+        <div class="col p-3">
+          <span style="font-size: 20px">
+            <strong>Room status</strong>
+          </span>
+        </div>
+        
+        <div class="col p-2">
+          <button class="btn btn-outline-secondary" type="submit" 
+          style="background-color: rgb(177, 180, 180);"
+          (click)="openVerticallyCentered(content)"
+          >
+            <i class="fas fa-plus"
+            > Add Room</i>
+          </button> 
+        </div>
       </div>
-    </div>
+    </div>  
   </section>
+
+  <!-- ng-template modal -->
+  <ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">Add rooms info</h4>
+      <button type="button" class="close" aria-label="Close" 
+        (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+
+    <div class="modal-body">
+      <div class="content d-flex flex-column text-center pl-5 pr-5 pt-3">
+        <label for="" class="my-2"><b>Room No</b> </label>
+        <input
+          class="border rounded"
+          type="number"
+          style="height: 35px"/>
+
+        <label for="" class="my-2"><b>guests</b> </label>
+        <input
+          class="border rounded"
+          type="number"
+          style="height: 35px"/>
+
+        <label for="" class="my-2"><b>Room Description</b> </label>
+        <input
+          class="border rounded"
+          type="number"
+          style="height: 35px"/>
+
+        <label for="" class="my-2"><b>Price: </b> </label>
+        <input
+          class="border rounded"
+          type="number"
+          style="height: 35px"/>
+
+         
+          <div class="checkbox mt-2">
+            <div class="d-flex justify-content-center">
+              <div class="">
+                <span><b>Booked:</b></span>
+              </div>
+              <div class="ml-4">
+                <input  class="form-check-input" type="checkbox" id="flexCheckDefault">
+              </div>
+              <div class="ml-4">
+                <span><b>Free:</b></span>
+              </div>
+              <div class="ml-4">
+                <input  class="form-check-input" type="checkbox" id="flexCheckDefault">
+              </div>
+            </div>
+          </div>
+      </div>     
+    </div>
+
+    <div class="modal-footer">
+      <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    </div>
+  </ng-template>
+  <!-- ng-template modal -->
 
   <section>
     <div class="container mt-3">
@@ -238,10 +307,9 @@
             </div>
         </div>
     </div>
-</section>
+</section>   
+</div>
 
-    <div class="mt-5">
-      <app-footer></app-footer>
-    </div>
-  </div>
+<div class="mt-5">
+  <app-footer></app-footer>
 </div>
