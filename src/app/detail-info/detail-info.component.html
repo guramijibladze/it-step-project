@@ -68,13 +68,13 @@
       height: 60px;
       margin-top: 80px;">
       <div class="row ">
-        <div class="col p-3">
+        <div class="col text-center p-3">
           <span style="font-size: 20px">
             <strong>Room status</strong>
           </span>
         </div>
         
-        <div class="col p-2">
+        <div class="col text-center p-2">
           <button class="btn btn-outline-secondary" type="submit" 
           style="background-color: rgb(177, 180, 180);"
           (click)="openVerticallyCentered(content)"
@@ -103,25 +103,29 @@
         <input
           class="border rounded"
           type="number"
-          style="height: 35px"/>
+          style="height: 35px"
+          [(ngModel)]="RoomDetail.roomNumber"/>
 
         <label for="" class="my-2"><b>guests</b> </label>
         <input
           class="border rounded"
           type="number"
-          style="height: 35px"/>
+          style="height: 35px"
+          [(ngModel)]="RoomDetail.roomGuest"/>
 
         <label for="" class="my-2"><b>Room Description</b> </label>
         <input
           class="border rounded"
-          type="number"
-          style="height: 35px"/>
+          type="text"
+          style="height: 35px"
+          [(ngModel)]="RoomDetail.Amenities"/>
 
         <label for="" class="my-2"><b>Price: </b> </label>
         <input
           class="border rounded"
           type="number"
-          style="height: 35px"/>
+          style="height: 35px"
+          [(ngModel)]="RoomDetail.price"/>
 
          
           <div class="checkbox mt-2">
@@ -139,6 +143,9 @@
                 <input  class="form-check-input" type="checkbox" id="flexCheckDefault">
               </div>
             </div>
+          </div>
+          <div class="button mt-3">
+            <button class="btn btn-outline-dark" (click)="addRoom()">Save</button>
           </div>
       </div>     
     </div>
