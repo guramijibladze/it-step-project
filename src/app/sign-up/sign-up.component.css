@@ -7,7 +7,10 @@ section{
 @media only screen and (max-height: 768px) {
     .container-fluid{
         margin-top: -30px;
-        max-height: 500px;
+    }
+
+    input{
+        height: 30px!important;
     }
 }
 
