@@ -4,6 +4,12 @@ section{
     top: 15vh;
 }
 
+@media only screen and (max-height: 768px) {
+    .container-fluid{
+        margin-top: -30px;
+    }
+}
+
 .parr{
     position: relative;
     min-height: 90.3vh;
