@@ -2,16 +2,10 @@ import { Component, OnInit,ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FirebaseService } from '../firebase.service';
 import { map } from 'rxjs/operators';
-<<<<<<< Updated upstream
 import { Customer, CustomerRoom } from './../Customer';
 import { json } from 'ngx-custom-validators/src/app/json/validator';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 declare var $: any;
-=======
-import { Customer } from './../Customer';
-// import { json } from 'ngx-custom-validators/src/app/json/validator';
-
->>>>>>> Stashed changes
 
 @Component({
   selector: 'app-detail-info',
