@@ -29,6 +29,29 @@ export class DetailInfoComponent implements OnInit {
   hotelRooms?: any[] = [];
   currentproduct!: any;
 
+  RoomDetail: {
+    roomNumber: any,
+    roomGuest: any,
+    Amenities: any[],
+    price: any,
+    token:boolean
+  } = {
+    roomNumber: '',
+    roomGuest: '',
+    Amenities: [],
+    price: '',
+    token: false
+  }
+
+  // {
+//   roomNumber: 2,
+//   roomPlaces: 2,
+//   amenities: ['tv', 'conditioner', 'kitchen'],
+//   price: 400,
+//   taken: true
+// },
+
+
   constructor(
     private route: ActivatedRoute,
     public db: FirebaseService,
@@ -51,7 +74,7 @@ export class DetailInfoComponent implements OnInit {
       .subscribe(
         (customers) => {
           this.customers = customers;
-          console.log(this.customers);
+          // console.log(this.customers);
           this.updateCustomerArray();
         },
         (error) => {
@@ -61,10 +84,9 @@ export class DetailInfoComponent implements OnInit {
   }
 
   updateCustomerArray() {
-    console.log(this.customers);
     this.index = this.route.snapshot.paramMap.get('id');
     this.customers.map((customer) => {
-      console.log(customer.key === this.index)
+      // console.log(customer.key === this.index)
       if(customer.key === this.index){
         let tmp = customer.rooms;
         console.log(tmp)
@@ -108,5 +130,24 @@ export class DetailInfoComponent implements OnInit {
     this.modalService.open(content, { centered: true });
   }
 
-}
+  addRoom(){
+    // console.log(this.db)
+    
+    this.customers.map((customer) => {
+      if(customer.key === this.index){
+        let data = [];
+        data.push(this.RoomDetail);
+        this.db.addCustomer(data);
+      }
+    });
 
+    this.RoomDetail = {
+      roomNumber: '',
+      roomGuest: '',
+      Amenities: [],
+      price: '',
+      token: false
+    };
+  }
+
+}

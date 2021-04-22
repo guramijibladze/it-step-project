@@ -1,5 +1,8 @@
-  <div  id="login-box" class="container-fluid limiter">
+  <div>
     <app-navigation></app-navigation>
+  </div>
+  
+  <div  id="login-box" class="container-fluid limiter" style="margin-top: 30px;">
     
     <div class="container-login100">
       <div class="wrap-login100">
@@ -43,12 +46,11 @@
         </form>
       </div>
     </div>
-
-    <div id="footer">
-      <app-footer></app-footer>
-    </div>
   </div>
 
+  <div id="footer">
+    <app-footer></app-footer>
+  </div>
 
 
 <app-customers *ngIf="isSignedIn" (isLogout)="handleLogout()"></app-customers>

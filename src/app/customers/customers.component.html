@@ -1,8 +1,8 @@
-<div class="container" >
+<div>
+  <app-navigation></app-navigation>
+</div>
 
-  <div class="mt-5">
-    <app-navigation></app-navigation>
-  </div>
+<div class="container mt-5" >
 
   <div class="add-costumers" style="padding-bottom: 50px;">
     <div class="section1">
@@ -123,8 +123,8 @@
             </span>
           </div>
 
-          <div class="col-md-4 col-sm-12">
-            <div class="row" >
+          <div class="col-md-4 col-sm-12 ">
+            <div id="buttons" class="row " >
               <div class="ml-5 mr-1">
                 <button class="btn btn-outline-success p-2" (click)="openLg(mymodal)">
                   <p style="margin: 0; padding: 0; color: rgb(6, 90, 90);"><b> ADD CUSTOMER</b></p>
@@ -150,29 +150,7 @@
 </div>
 
 
-<footer class="page-footer bg-dark mt-5" >
-  <div class="footer-copyright text-white py-3">
+<div>
+  <app-footer></app-footer>
+</div>
 
-    <div class="d-flex justify-content-around align-items-center">
-      <div class="d-flex-column">
-        <div>@2021 Copyright</div>
-        <div class="row py-2 align-items-center">
-          <i class="fas fa-phone-alt px-3"></i>
-          <p class="my-2">+995 571 17 77 71</p>
-        </div>
-      </div>
-
-      <img class="img-fluid" src="../../assets/media/logo2.svg" alt="no_logo" />
-
-      <div>
-        <div>Social media</div>
-        <hr />
-        <div class="row justify-content-around">
-          <div><i class="fab fa-instagram"></i></div>
-          <div><i class="fab fa-facebook"></i></div>
-          <div><i class="fab fa-twitter"></i></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
