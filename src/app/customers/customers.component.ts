@@ -14,6 +14,7 @@ import { Router } from '@angular/router';
   templateUrl: './customers.component.html',
   styleUrls: ['./customers.component.css'],
 })
+
 export class CustomersComponent implements OnInit {
   @Output() isLogout = new EventEmitter<void>();
   allCustomers: number = 0;
@@ -50,6 +51,20 @@ export class CustomersComponent implements OnInit {
         amenities: ['tv', 'conditioner', 'kitchen'],
         price: 400,
         taken: true
+      },
+      {
+        roomNumber: 2,
+        roomPlaces: 2,
+        amenities: ['tv', 'conditioner', 'kitchen'],
+        price: 400,
+        taken: true
+      },
+      {
+        roomNumber: 1,
+        roomPlaces: 4,
+        amenities: ['tv', 'conditioner'],
+        price: 24,
+        taken: false,
       },
     ],
   };
@@ -126,7 +141,36 @@ export class CustomersComponent implements OnInit {
       Descrption: '',
       Image: '',
       id: null,
-      rooms: [],
+      rooms: [
+        {
+          roomNumber: 1,
+          roomPlaces: 4,
+          amenities: ['tv', 'conditioner'],
+          price: 24,
+          taken: false,
+        },
+        {
+          roomNumber: 2,
+          roomPlaces: 2,
+          amenities: ['tv', 'conditioner', 'kitchen'],
+          price: 400,
+          taken: true
+        },
+        {
+          roomNumber: 2,
+          roomPlaces: 2,
+          amenities: ['tv', 'conditioner', 'kitchen'],
+          price: 400,
+          taken: true
+        },
+        {
+          roomNumber: 1,
+          roomPlaces: 4,
+          amenities: ['tv', 'conditioner'],
+          price: 24,
+          taken: false,
+        },
+      ]
     };
   }
 

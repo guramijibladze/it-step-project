@@ -63,6 +63,11 @@ export class FirebaseService {
     this.realtimeDb.list('messages').push(customer);
   }
 
+  addCustomerRoom(roomData: any, index: any ){
+    // this.customersRef.remove('messages/'+ index + '/rooms/');
+    this.realtimeDb.list('messages/'+ index).set('rooms', roomData);
+  }
+
   getCustomersList(): AngularFireList<Customer> {
     // console.log(this.customersRef)
     return this.customersRef;

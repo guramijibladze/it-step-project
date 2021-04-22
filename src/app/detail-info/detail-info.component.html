@@ -71,16 +71,99 @@
         margin-top: 80px;
       "
     >
-      <div class="text text-center">
-        <p style="font-size: 20px">
+      <div class="d-flex justify-content-between">
+        <p style="font-size: 20px; margin-top: 4px;">
           <strong>Room status</strong>
-          <button class="login100-form-btn" type="submit">Login</button>
         </p>
+        <button class="btn add__newroom_button" type="submit" (click)="openLg(mymodal)"><i class="fas fa-plus-square"></i></button>
       </div>
     </div>
+
+    <!-- Modal -->
+    <ng-template #mymodal let-modal>
+      <div class="modal-header">
+        <h4 class="modal-title">Add information of Hotel</h4>
+        <button
+          type="button"
+          class="close"
+          aria-label="Close"
+          (click)="modal.dismiss('Cross click')"
+        >
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body" style="position: relative; height: auto">
+        <div class="container">
+          <div
+            class="content d-flex flex-column text-center pl-5 pr-5 pt-3"
+          >
+            <label for="" class="my-2"><b>Room Number</b> </label>
+            <input
+              class="border rounded"
+              [(ngModel)]="product.roomNumber"
+              type="text"
+              style="height: 35px"
+            />
+            <label for="" class="mt-2"><b>Person Ammount in Room</b> </label>
+            <input
+              class="border rounded"
+              [(ngModel)]="product.roomPlaces"
+              type="text"
+              style="height: 35px"
+            />
+            <label for="" class="mt-2"><b>Is the room taken? (true/false)</b></label>
+            <input
+              class="border rounded"
+              [(ngModel)]="product.taken"
+              type="text"
+              style="height: 35px"
+            />
+            <label for="" class="mt-2"><b>Price</b></label>
+            <input
+              class="border rounded"
+              [(ngModel)]="product.price"
+              type="text"
+              style="height: 35px"
+            />
+            <label for="" class="mt-2"><b>Additional Amenities</b></label>
+            <div class="form-floating">
+              <textarea
+                class="form-control"
+                [(ngModel)]="product.amenities"
+                placeholder="Leave a comment here"
+                id="floatingTextarea2"
+                style="height: 100px"
+              ></textarea>
+            </div>
+            <div class="save mt-2">
+              <button
+                type="submit"
+                class="btn btn-outline-dark"
+                (click)="addHotelRoom()"
+              >
+                save
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="submit"
+          class="btn btn-outline-dark"
+          (click)="modal.close('Save click')"
+        >
+          Ok
+        </button>
+      </div>
+    </ng-template>
+
+
   </section>
 
-  <section>
+
+
+  <!-- <section>
     <div class="container mt-3">
       <div class="hotel-room">
         <div class="row mt-3 d-flex flex-wrap">
@@ -104,144 +187,69 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <section class="pt-5 pb-5">
     <div class="container">
-        <div class="row">
-            <div class="col-6">
-                <h3 class="mb-3">Carousel cards title </h3>
-            </div>
-            <div class="col-6 text-right">
-                <a class="btn btn-primary mb-3 mr-1" href="#carouselExampleIndicators2" role="button" data-slide="prev">
-                    <i class="fa fa-arrow-left"></i>
-                </a>
-                <a class="btn btn-primary mb-3 " href="#carouselExampleIndicators2" role="button" data-slide="next">
-                    <i class="fa fa-arrow-right"></i>
-                </a>
-            </div>
-            <div class="col-12">
-                <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
-
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <div class="row">
-
-                                <div class="col-md-4 mb-3">
-                                    <div class="card">
-                                        <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532781914607-2031eca2f00d?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=7c625ea379640da3ef2e24f20df7ce8d">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Special title treatment</h4>
-                                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <div class="col-md-4 mb-3">
-                                    <div class="card">
-                                        <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1517760444937-f6397edcbbcd?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=42b2d9ae6feb9c4ff98b9133addfb698">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Special title treatment</h4>
-                                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 mb-3">
-                                    <div class="card">
-                                        <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=3d2e8a2039c06dd26db977fe6ac6186a">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Special title treatment</h4>
-                                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="row">
-
-                                <div class="col-md-4 mb-3">
-                                    <div class="card">
-                                        <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532771098148-525cefe10c23?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=3f317c1f7a16116dec454fbc267dd8e4">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Special title treatment</h4>
-                                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <div class="col-md-4 mb-3">
-                                    <div class="card">
-                                        <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532715088550-62f09305f765?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=ebadb044b374504ef8e81bdec4d0e840">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Special title treatment</h4>
-                                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 mb-3">
-                                    <div class="card">
-                                        <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=0754ab085804ae8a3b562548e6b4aa2e">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Special title treatment</h4>
-                                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="row">
-
-                                <div class="col-md-4 mb-3">
-                                    <div class="card">
-                                        <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=ee8417f0ea2a50d53a12665820b54e23">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Special title treatment</h4>
-                                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <div class="col-md-4 mb-3">
-                                    <div class="card">
-                                        <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532777946373-b6783242f211?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=8ac55cf3a68785643998730839663129">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Special title treatment</h4>
-                                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 mb-3">
-                                    <div class="card">
-                                        <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532763303805-529d595877c5?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=5ee4fd5d19b40f93eadb21871757eda6">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Special title treatment</h4>
-                                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="row">
+        <div class="col-6">
+          <h3 class="mb-3">Hotel Rooms</h3>
         </div>
-    </div>
-</section>
+        <div class="col-6 text-right">
+          <a
+            class="btn btn-primary mb-3 mr-1"
+            href="#carouselExampleIndicators2"
+            role="button"
+            data-slide="prev"
+          >
+            <i class="fa fa-arrow-left"></i>
+          </a>
+          <a
+            class="btn btn-primary mb-3"
+            href="#carouselExampleIndicators2"
+            role="button"
+            data-slide="next"
+          >
+            <i class="fa fa-arrow-right"></i>
+          </a>
+        </div>
+        <div class="col-12">
+          <div
+            id="carouselExampleIndicators2"
+            class="carousel slide"
+            data-ride="carousel"
+          >
+            <div class="carousel-inner">
+              <div class="carousel-item" *ngFor="let data of chunkedHotelData; let i = index;" [ngClass]="{'active' : i == 0}" >
+                <div class="row d-flex flex-nowrap">
+                  <div class="col-md-4 mb-3"  *ngFor="let d of data">
+                    <div class="card">
+                      <img
+                        class="img-fluid"
+                        alt="100%x280"
+                        src="https://images.unsplash.com/photo-1532771098148-525cefe10c23?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=3f317c1f7a16116dec454fbc267dd8e4"
+                      />
+                      <div class="card-body">
+                        <h4 class="card-title">{{d.roomNumber}}</h4>
+                        <p class="card-text">
+                          {{d.roomPlaces}}
+                        </p>
+                        <h3>Amenities: <em>{{d.amenities}}</em> </h3>
+                        <h3>{{d.price}}</h3>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-    <div class="mt-5">
-      <app-footer></app-footer>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </section>
+
+  <div class="mt-5">
+    <app-footer></app-footer>
   </div>
 </div>

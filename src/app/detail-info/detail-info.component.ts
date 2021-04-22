@@ -4,7 +4,7 @@ import { FirebaseService } from '../firebase.service';
 import { map } from 'rxjs/operators';
 import { Customer, CustomerRoom } from './../Customer';
 import { json } from 'ngx-custom-validators/src/app/json/validator';
-declare var $: any;
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-detail-info',
@@ -12,7 +12,6 @@ declare var $: any;
   styleUrls: ['./detail-info.component.css'],
 })
 export class DetailInfoComponent implements OnInit {
-
   images = [944, 1011, 984].map(
     (n) => `https://picsum.photos/id/${n}/1200/500`
   );
@@ -24,16 +23,36 @@ export class DetailInfoComponent implements OnInit {
   Description!: any;
 
   customers: Array<Customer> = [];
+  currentCustomer: any;
   hotelRooms?: any[] = [];
-  currentproduct!: any;
+  chunkedHotelData: any[] = [];
+
+  product: {
+    roomNumber: any;
+    roomPlaces: any;
+    amenities: any[any];
+    price: any;
+    taken: boolean;
+  } = {
+    roomNumber: '',
+    roomPlaces: '',
+    amenities: [],
+    price: '',
+    taken: false,
+  };
 
   constructor(
     private route: ActivatedRoute,
     public db: FirebaseService,
-    private router: Router
+    private router: Router,
+    private modalService: NgbModal
   ) {
     this.retrieveAllCustomers();
     // this.product = history.state;
+  }
+
+  openLg(content: any) {
+    this.modalService.open(content, { size: 'lg' });
   }
 
   retrieveAllCustomers() {
@@ -48,7 +67,6 @@ export class DetailInfoComponent implements OnInit {
       .subscribe(
         (customers) => {
           this.customers = customers;
-          console.log(this.customers);
           this.updateCustomerArray();
         },
         (error) => {
@@ -61,12 +79,13 @@ export class DetailInfoComponent implements OnInit {
     console.log(this.customers);
     this.index = this.route.snapshot.paramMap.get('id');
     this.customers.map((customer) => {
-      console.log(customer.key === this.index)
-      console.log(this.index)
-      if(customer.key === this.index){
-        let tmp = customer.rooms;
-        console.log(tmp)
-        this.hotelRooms = tmp
+      if (customer.key === this.index) {
+        this.hotelRooms = customer.rooms;
+        this.currentCustomer = customer
+        if (this.hotelRooms) {
+          let tmp:any[] = [...this.hotelRooms];
+          this.chunkedHotelData = this.chunks(tmp);
+        }
         this.City = customer.City;
         this.HotelName = customer.name;
         this.HotelAddress = customer.HotelAddress;
@@ -76,31 +95,26 @@ export class DetailInfoComponent implements OnInit {
     console.log(this.hotelRooms);
   }
 
-  ngOnInit(): void {
-
-    $('#recipeCarousel').carousel({
-      interval: 10000
-    })
-
-    $('.carousel .carousel-item').each(() =>{
-        var minPerSlide = 3;
-        var next = $(this).next();
-        if (!next.length) {
-        next = $(this).siblings(':first');
-        }
-        next.children(':first-child').clone().appendTo($(this));
-
-        for (var i=0;i<minPerSlide;i++) {
-            next=next.next();
-            if (!next.length) {
-              next = $(this).siblings(':first');
-            }
-
-            next.children(':first-child').clone().appendTo($(this));
-          }
-    });
-
+  chunks(array: any[]) {
+    let results = [];
+    results = [];
+    while (array.length) {
+      results.push(array.splice(0, 3));
+    }
+    return results;
   }
 
-}
+  addHotelRoom() {
+    this.currentCustomer.rooms.push(this.product)
+    this.db.addCustomerRoom(this.currentCustomer.rooms, this.index);
+    this.product = {
+      roomNumber: '',
+      roomPlaces: '',
+      amenities: [],
+      price: '',
+      taken: false,
+    };
+  }
 
+  ngOnInit(): void {}
+}
