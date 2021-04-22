@@ -6,7 +6,7 @@ section{
 
 @media only screen and (max-height: 768px) {
     .container-fluid{
-        margin-top: -40px;
+        margin-top: -50px;
     }
 
     input{
