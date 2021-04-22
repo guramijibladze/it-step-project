@@ -6,9 +6,6 @@ import { Customer, CustomerRoom } from './../Customer';
 import { json } from 'ngx-custom-validators/src/app/json/validator';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 declare var $: any;
-// import { Customer } from './../Customer';
-// import { json } from 'ngx-custom-validators/src/app/json/validator';
-
 
 @Component({
   selector: 'app-detail-info',
