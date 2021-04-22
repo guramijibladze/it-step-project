@@ -6,7 +6,8 @@ section{
 
 @media only screen and (max-height: 768px) {
     .container-fluid{
-        margin-top: -30px;
+        margin-top: -70px;
+        margin-bottom: 100px;
     }
 }
 
