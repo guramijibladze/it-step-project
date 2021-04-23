@@ -34,7 +34,7 @@
                   <label for="" class="my-2"><i class="far fa-image mr-2"></i><b>Image</b> </label>
                   <input
                     class="border rounded"
-                    [(ngModel)]="product.Image"
+                    [(ngModel)]="product.hotelImages"
                     type="text"
                     style="height: 35px"
                   />
@@ -111,19 +111,22 @@
         <div class="row">
 
           <div class="col-md-4 col-sm-12">
-            <div class="input-group rounded d-flex align-items-center">
-              <span class="input-group-text border-0" id="search-addon">
-                <button class="btn btn-sm" (click)="searchHotel(searchValue.value)"><i class="fas fa-search"></i></button>
-              </span>
-              <input
-                type="search"
-                class="form-control rounded"
-                placeholder="Search"
-                aria-label="Search"
-                aria-describedby="search-addon"
-                #searchValue
-              />
-            </div>
+            <form action="">
+              <div class="input-group rounded d-flex align-items-center">
+                <span class="input-group-text border-0" id="search-addon">
+                  <button class="btn btn-sm" (click)="searchHotel(searchValue.value)"><i class="fas fa-search"></i></button>
+                </span>
+                <input
+                  type="search"
+                  class="form-control rounded"
+                  placeholder="Search"
+                  aria-label="Search"
+                  aria-describedby="search-addon"
+                  #searchValue
+                />
+              </div>
+            </form>
+
           </div>
 
           <div class="col-md-3 col-sm-12 p-2" style="text-align: center">
@@ -145,7 +148,6 @@
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </div>

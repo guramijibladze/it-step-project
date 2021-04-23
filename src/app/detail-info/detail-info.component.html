@@ -1,6 +1,6 @@
+<app-navigation></app-navigation>
 <div class="container">
-  <app-navigation></app-navigation>
-  <section>
+  <!-- <section>
     <div class="container-header border rounded" style="margin-top: 120px">
       <div class="row">
         <div class="text-center pt-2 col-md-3 col-sm-12">
@@ -37,29 +37,34 @@
         <p style="font-weight: bolder">{{ Description }}</p>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <!-- Hotel Photo Gallery -->
   <section>
     <div class="container mt-5">
-      <ngb-carousel *ngIf="images">
+      <ngb-carousel *ngIf="hotelImages">
         <ng-template ngbSlide>
           <div class="picsum-img-wrapper">
-            <img [src]="images[0]" alt="Random first slide" />
+            <img [src]="hotelImages[0]" alt="Random first slide" />
           </div>
         </ng-template>
         <ng-template ngbSlide>
           <div class="picsum-img-wrapper">
-            <img [src]="images[1]" alt="Random second slide" />
+            <img [src]="hotelImages[1]" alt="Random second slide" />
           </div>
         </ng-template>
         <ng-template ngbSlide>
           <div class="picsum-img-wrapper">
-            <img [src]="images[2]" alt="Random third slide" />
+            <img [src]="hotelImages[2]" alt="Random third slide" />
           </div>
         </ng-template>
       </ngb-carousel>
     </div>
+  </section>
+
+  <section>
+    <h2 class="text-center">Welcome to hotel {{ HotelName }}</h2>
+    <p class="text-center">{{ Description }}</p>
   </section>
 
   <section>
@@ -97,6 +102,13 @@
           <div
             class="content d-flex flex-column text-center pl-5 pr-5 pt-3"
           >
+          <!-- <label for="" class="my-2"><b>Hotel Pictures <em>put "," between links</em></b> </label>
+            <input
+              class="border rounded"
+              [(ngModel)]="hotelImages"
+              type="text"
+              style="height: 35px"
+            /> -->
             <label for="" class="my-2"><b>Room Number</b> </label>
             <input
               class="border rounded"
@@ -125,6 +137,13 @@
               type="text"
               style="height: 35px"
             />
+            <label for="" class="my-2"><b>Room Pictures <em>put "," between links</em></b> </label>
+            <input
+              #roomPictures
+              class="border rounded"
+              type="text"
+              style="height: 35px"
+            />
             <label for="" class="mt-2"><b>Additional Amenities</b></label>
             <div class="form-floating">
               <textarea
@@ -139,7 +158,7 @@
               <button
                 type="submit"
                 class="btn btn-outline-dark"
-                (click)="addHotelRoom()"
+                (click)="addHotelRoom(roomPictures.value)"
               >
                 save
               </button>

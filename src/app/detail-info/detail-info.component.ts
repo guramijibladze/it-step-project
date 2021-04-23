@@ -13,16 +13,14 @@ declare var $: any;
   encapsulation: ViewEncapsulation.None,
   styleUrls: ['./detail-info.component.css'],
 })
+
 export class DetailInfoComponent implements OnInit {
-  images = [944, 1011, 984].map(
-    (n) => `https://picsum.photos/id/${n}/1200/500`
-  );
   index!: any;
-  obj: any = [];
   City!: any;
   HotelAddress!: any;
   HotelName!: any;
   Description!: any;
+  hotelImages?: any[];
 
   customers: Array<Customer> = [];
   currentCustomer: any;
@@ -35,26 +33,14 @@ export class DetailInfoComponent implements OnInit {
     amenities: any[any];
     price: any;
     taken: boolean;
+    roomPictures: any[any];
   } = {
     roomNumber: '',
     roomPlaces: '',
     amenities: [],
     price: '',
     taken: false,
-  };
-
-  RoomDetail: {
-    roomNumber: any,
-    roomGuest: any,
-    Amenities: any[],
-    price: any,
-    token:boolean
-  } = {
-    roomNumber: '',
-    roomGuest: '',
-    Amenities: [],
-    price: '',
-    token: false
+    roomPictures: []
   };
 
   constructor(
@@ -96,7 +82,7 @@ export class DetailInfoComponent implements OnInit {
     this.customers.map((customer) => {
       if (customer.key === this.index) {
         this.hotelRooms = customer.rooms;
-        this.currentCustomer = customer
+        this.currentCustomer = customer;
         if (this.hotelRooms) {
           let tmp:any[] = [...this.hotelRooms];
           this.chunkedHotelData = this.chunks(tmp);
@@ -105,9 +91,9 @@ export class DetailInfoComponent implements OnInit {
         this.HotelName = customer.name;
         this.HotelAddress = customer.HotelAddress;
         this.Description = customer.Descrption;
+        this.hotelImages = customer.hotelImages;
       }
     });
-    console.log(this.hotelRooms);
   };
 
   chunks(array: any[]) {
@@ -119,15 +105,20 @@ export class DetailInfoComponent implements OnInit {
     return results;
   };
 
-  addHotelRoom() {
-    this.currentCustomer.rooms.push(this.product)
-    this.db.addCustomerRoom(this.currentCustomer.rooms, this.index);
+  addHotelRoom(roomPictures: any) {
+    if(roomPictures){
+      let tmp = roomPictures.split(',');
+      this.product.roomPictures = [...tmp]
+    }
+    this.currentCustomer.rooms.push(this.product);
+    this.db.addCustomerRoom(this.currentCustomer.rooms, this.currentCustomer.key);
     this.product = {
       roomNumber: '',
       roomPlaces: '',
       amenities: [],
       price: '',
       taken: false,
+      roomPictures: [],
     };
   };
 

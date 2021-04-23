@@ -27,9 +27,8 @@ export class CustomersComponent implements OnInit {
     HotelAddress: string;
     City: string;
     Descrption: string;
-    Image: string;
+    hotelImages: any[];
     date: string;
-    key: any;
     rating?: number;
     rooms?: any[];
   } = {
@@ -37,9 +36,8 @@ export class CustomersComponent implements OnInit {
     HotelAddress: '',
     City: '',
     Descrption: '',
-    Image: '',
+    hotelImages: [],
     date: '',
-    key: '',
     rating: 0,
     rooms: [
       {
@@ -48,20 +46,23 @@ export class CustomersComponent implements OnInit {
         amenities: ['tv', 'conditioner'],
         price: 24,
         taken: false,
+        roomPictures: []
       },
       {
         roomNumber: 2,
         roomPlaces: 2,
         amenities: ['tv', 'conditioner', 'kitchen'],
         price: 400,
-        taken: true
+        taken: true,
+        roomPictures: []
       },
       {
         roomNumber: 2,
         roomPlaces: 2,
         amenities: ['tv', 'conditioner', 'kitchen'],
         price: 400,
-        taken: true
+        taken: true,
+        roomPictures: []
       },
       {
         roomNumber: 1,
@@ -69,6 +70,7 @@ export class CustomersComponent implements OnInit {
         amenities: ['tv', 'conditioner'],
         price: 24,
         taken: false,
+        roomPictures: []
       },
     ],
   };
@@ -147,9 +149,8 @@ export class CustomersComponent implements OnInit {
       HotelAddress: '',
       City: '',
       Descrption: '',
-      Image: '',
+      hotelImages: [],
       date: '',
-      key: '',
       rating: 0,
       rooms: [],
     };

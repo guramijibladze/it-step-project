@@ -5,7 +5,7 @@ export interface Customer {
     HotelAddress?: string;
     City?: string;
     Descrption?: string;
-    Image?: string;
+    hotelImages?: any[];
     date?: string;
     key: any;
     rating?: number;
