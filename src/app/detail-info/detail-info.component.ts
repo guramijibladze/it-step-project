@@ -1,14 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FirebaseService } from '../firebase.service';
 import { map } from 'rxjs/operators';
 import { Customer, CustomerRoom } from './../Customer';
 import { json } from 'ngx-custom-validators/src/app/json/validator';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+declare var $: any;
 
 @Component({
   selector: 'app-detail-info',
   templateUrl: './detail-info.component.html',
+  encapsulation: ViewEncapsulation.None,
   styleUrls: ['./detail-info.component.css'],
 })
 export class DetailInfoComponent implements OnInit {
@@ -40,6 +42,29 @@ export class DetailInfoComponent implements OnInit {
     price: '',
     taken: false,
   };
+
+  RoomDetail: {
+    roomNumber: any,
+    roomGuest: any,
+    Amenities: any[],
+    price: any,
+    token:boolean
+  } = {
+    roomNumber: '',
+    roomGuest: '',
+    Amenities: [],
+    price: '',
+    token: false
+  }
+
+  // {
+//   roomNumber: 2,
+//   roomPlaces: 2,
+//   amenities: ['tv', 'conditioner', 'kitchen'],
+//   price: 400,
+//   taken: true
+// },
+
 
   constructor(
     private route: ActivatedRoute,
@@ -76,7 +101,6 @@ export class DetailInfoComponent implements OnInit {
   }
 
   updateCustomerArray() {
-    console.log(this.customers);
     this.index = this.route.snapshot.paramMap.get('id');
     this.customers.map((customer) => {
       if (customer.key === this.index) {
@@ -116,5 +140,8 @@ export class DetailInfoComponent implements OnInit {
     };
   }
 
-  ngOnInit(): void {}
+  openVerticallyCentered(content:any) {
+    this.modalService.open(content, { centered: true });
+  }
+
 }

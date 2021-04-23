@@ -1,16 +1,23 @@
-/* .add-costumers{
-    background-color: blanchedalmond;
-} */
 
-@media only screen and (max-width: 575px){
+/* @media only screen and (max-width: 575px){
     .title, .add-costumers-btn {
         text-align: center!important;
-        /* background-color: black; */
+        background-color: black;
     }
 
     .section2{
         text-align: center!important;
     }
+} */
+
+@media only screen and (max-width: 575px){
+  #buttons {
+      /* text-align: center!important; */
+      margin-left: 6%;
+      /* background-color: black; */
+  }
+
+
 }
 
 
@@ -32,17 +39,7 @@ hr {
   }
   
   .img-fluid{
-    width: 20%;
-    height: 100px;
+    width: 15%;
+    height: 15%;
   }
 
-  .container{
-      position: relative;
-  }
-
-  footer{
-      position: absolute;
-      position: sticky;
-      bottom: 0;
-      width: 100%;
-  }
