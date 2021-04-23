@@ -10,34 +10,24 @@
     }
 } */
 
-@media only screen and (max-width: 575px){
-  #buttons {
-      /* text-align: center!important; */
-      margin-left: 6%;
-      /* background-color: black; */
-  }
-
-
-}
-
 
 hr {
     margin-top: 0;
     background-color: white;
   }
-  
+
   .fab {
     font-weight: 500;
     font-size: 20px;
     cursor: pointer;
     transition: font-size 0.2s;
   }
-  
+
   .fab:hover {
     color: #118ab2;
     font-size: 24px;
   }
-  
+
   .img-fluid{
     width: 15%;
     height: 15%;

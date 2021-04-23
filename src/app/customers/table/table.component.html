@@ -2,16 +2,16 @@
 <div class="container my-5">
   <div class="row">
     <div class="col-12">
-      <table class="table table-image">
-        <thead style="background-color: rgb(83, 99, 143);">
+      <table class="table-responsive table-image">
+        <thead style="background-color: #53638f;">
           <tr>
-            <th scope="col"><h3><b>NUM</b></h3></th>
-            <th class="text-center" scope="col"><h3><b>Image</b></h3></th>
-            <th scope="col"><h3><b>Hotel Name</b></h3></th>
+            <th scope="col" class="text-center pt-2"><h3><b>NUM</b></h3></th>
+            <th class="text-center pt-2" scope="col"><h3><b>Image</b></h3></th>
+            <th scope="col" class="text-center pt-2"><h3><b>Hotel Name</b></h3></th>
             <!-- <th scope="col"><h3><b>Address</b></h3></th> -->
-            <th scope="col"><h3><b>City</b></h3></th>
+            <th scope="col" class="text-center pt-2"><h3><b>City</b></h3></th>
             <!-- <th scope="col"><h3><b>Description</b></h3></th> -->
-            <th class="text-center" scope="col"><h3><b><i class="fas fa-star-half-alt" 
+            <th class="text-center pt-2" scope="col"><h3><b><i class="fas fa-star-half-alt"
               style="font-size: 25px;"></i></b></h3></th>
             <th  scope="col"><h3><b>Actions</b></h3></th>
           </tr>
@@ -19,7 +19,7 @@
 
         <tbody  >
           <tr *ngFor="let i of item; index as num">
-            <th scope="row">{{ num + 1 }}</th>
+            <td scope="row">{{ num + 1 }}</td>
             <td class="w-25">
               <img
                 *ngIf="!tableEdit || showCustomer.key !== i.key"
@@ -54,10 +54,16 @@
             </td> -->
             <td>
               <!-- ng Rating modal -->
-              
+
                 <ngb-rating [rate] = i.rating ></ngb-rating>
                 <hr>
+                <div class="row m-1">
                   Rate: <b>{{ i.rating }}</b>
+                </div>
+                <div class="row m-1">
+                  Created at: {{ i.date }}
+                </div>
+
             </td>
             <td>
               <div class="d-flex flex-column">
@@ -124,8 +130,8 @@
                         <h2><b>Rete:{{ i.rating }}</b></h2>
                         <i class="far fa-star ml-2" style="margin-top: 6px; font-size: 20px;"></i>
                       </div>
-                      
-                      
+
+
                       <img src="{{ i.Image }}" alt="" style="width: inherit" />
                     </div>
                     <div

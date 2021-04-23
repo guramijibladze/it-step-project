@@ -28,17 +28,19 @@ export class CustomersComponent implements OnInit {
     City: string;
     Descrption: string;
     Image: string;
-    id: any;
+    date: string;
+    key: any;
+    rating?: number;
     rooms?: any[];
-    rating: any;
   } = {
     name: '',
     HotelAddress: '',
     City: '',
     Descrption: '',
     Image: '',
-    id: null,
-    rating: '',
+    date: '',
+    key: '',
+    rating: 0,
     rooms: [
       {
         roomNumber: 1,
@@ -133,7 +135,12 @@ export class CustomersComponent implements OnInit {
   }
 
   addFile() {
-    this.product.id = +Math.floor(Math.random() * 1000);
+    let date = new Date();
+    var dd = date.getDate().toString();
+    var mm = String(date.getMonth() + 1);
+    var yyyy = date.getFullYear();
+
+    this.product.date = String(mm + '/' + dd + '/' + yyyy);
     this.firebaseService.addCustomer(this.product);
     this.product = {
       name: '',
@@ -141,8 +148,9 @@ export class CustomersComponent implements OnInit {
       City: '',
       Descrption: '',
       Image: '',
-      id: null,
-      rating: '',
+      date: '',
+      key: '',
+      rating: 0,
       rooms: [],
     };
     // this.arrRating.push(this.rating)

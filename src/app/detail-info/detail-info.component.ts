@@ -55,16 +55,7 @@ export class DetailInfoComponent implements OnInit {
     Amenities: [],
     price: '',
     token: false
-  }
-
-  // {
-//   roomNumber: 2,
-//   roomPlaces: 2,
-//   amenities: ['tv', 'conditioner', 'kitchen'],
-//   price: 400,
-//   taken: true
-// },
-
+  };
 
   constructor(
     private route: ActivatedRoute,
@@ -117,7 +108,7 @@ export class DetailInfoComponent implements OnInit {
       }
     });
     console.log(this.hotelRooms);
-  }
+  };
 
   chunks(array: any[]) {
     let results = [];
@@ -126,7 +117,7 @@ export class DetailInfoComponent implements OnInit {
       results.push(array.splice(0, 3));
     }
     return results;
-  }
+  };
 
   addHotelRoom() {
     this.currentCustomer.rooms.push(this.product)
@@ -138,10 +129,12 @@ export class DetailInfoComponent implements OnInit {
       price: '',
       taken: false,
     };
-  }
+  };
 
   openVerticallyCentered(content:any) {
     this.modalService.open(content, { centered: true });
-  }
+  };
+
+  ngOnInit(){};
 
 }

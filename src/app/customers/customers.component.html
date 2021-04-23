@@ -111,7 +111,7 @@
         <div class="row">
 
           <div class="col-md-4 col-sm-12">
-            <div class="input-group rounded">
+            <div class="input-group rounded d-flex align-items-center">
               <span class="input-group-text border-0" id="search-addon">
                 <button class="btn btn-sm" (click)="searchHotel(searchValue.value)"><i class="fas fa-search"></i></button>
               </span>
@@ -126,15 +126,15 @@
             </div>
           </div>
 
-          <div class="col-md-4 col-sm-12 p-2" style="text-align: center">
+          <div class="col-md-3 col-sm-12 p-2" style="text-align: center">
             <span>
               <h4><strong>all Hotels: ({{ allCustomers }})</strong></h4>
             </span>
           </div>
 
-          <div class="col-md-4 col-sm-12 ">
-            <div id="buttons" class="row " >
-              <div class="ml-5 mr-1">
+          <div class="col-md-5 col-sm-12 ">
+            <div id="buttons" class="row d-flex justify-content-center " >
+              <div class=" mr-1">
                 <button class="btn btn-outline-success p-2" (click)="openLg(mymodal)">
                   <p style="margin: 0; padding: 0; color: rgb(6, 90, 90);"><b> ADD CUSTOMER</b></p>
                 </button>

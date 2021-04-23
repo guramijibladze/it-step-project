@@ -1,6 +1,5 @@
-tr:hover{
-  background-color: bisque;
-  
+tbody > tr:hover{
+  background-color: #e9ecef;
 }
 
 
@@ -8,6 +7,7 @@ td{
   overflow: hidden;
   width: auto;
   text-overflow: ellipsis;
+  text-align: center;
 }
 
 ul{
@@ -23,7 +23,27 @@ ul > li {
   width: 150px;
   overflow: auto;
   height: 150px;
+}
+
+@media only screen and (max-width: 440px) {
+  th > *{
+    font-size: 12px;
+    padding: 1px;
+    margin: 1px;
+  }
+  button, i{
+    font-size: 10px;
+    margin: 1px !important;
+    padding: 3px !important;
+  }
+  img{
+    min-width: 100px !important;
+  }
 
 }
 
+
+@media only screen and (max-width: 940px) {
+
+}
 
