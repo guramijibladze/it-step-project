@@ -3,16 +3,17 @@
   <div class="row">
     <div class="col-12">
       <table class="table table-image">
-        <thead style="background-color: rgb(179, 161, 134);">
+        <thead style="background-color: rgb(83, 99, 143);">
           <tr>
             <th scope="col"><h3><b>NUM</b></h3></th>
             <th class="text-center" scope="col"><h3><b>Image</b></h3></th>
             <th scope="col"><h3><b>Hotel Name</b></h3></th>
-            <th scope="col"><h3><b>Hotel Address</b></h3></th>
+            <!-- <th scope="col"><h3><b>Address</b></h3></th> -->
             <th scope="col"><h3><b>City</b></h3></th>
-            <th scope="col"><h3><b>Description</b></h3></th>
-            <th scope="col"><h3><b>Rating</b></h3></th>
-            <th scope="col"><h3><b>Actions</b></h3></th>
+            <!-- <th scope="col"><h3><b>Description</b></h3></th> -->
+            <th class="text-center" scope="col"><h3><b><i class="fas fa-star-half-alt" 
+              style="font-size: 25px;"></i></b></h3></th>
+            <th  scope="col"><h3><b>Actions</b></h3></th>
           </tr>
         </thead>
 
@@ -32,37 +33,37 @@
               <p *ngIf="!tableEdit || showCustomer.key !== i.key"><b>{{ i.name }}</b></p>
               <input *ngIf="tableEdit && showCustomer.key === i.key" type="text" [(ngModel)]="i.name" />
             </td>
-            <td>
+            <!-- <td>
               <p *ngIf="!tableEdit || showCustomer.key !== i.key"><b>{{ i.HotelAddress }}</b></p>
               <input
                 *ngIf="tableEdit && showCustomer.key === i.key"
                 type="text"
                 [(ngModel)]="i.HotelAddress"
               />
-            </td>
+            </td> -->
             <td>
               <p *ngIf="!tableEdit || showCustomer.key !== i.key"><b>{{ i.City }}</b></p>
               <input *ngIf="tableEdit && showCustomer.key === i.key" type="text" [(ngModel)]="i.City" />
             </td>
-            <td>
+            <!-- <td>
               <div id="overflowTest" *ngIf="!tableEdit || showCustomer.key !== i.key">
                 <b>{{ i.Descrption }}</b>
               </div>
 
               <input *ngIf="tableEdit && showCustomer.key === i.key" type="text" [(ngModel)]="i.Descrption" />
-            </td>
+            </td> -->
             <td>
               <!-- ng Rating modal -->
-              <ngb-rating [rate]="3" ></ngb-rating>
-              <!-- <hr> -->
-              <!-- <pre> <b>Rate:{{currentRate}}</b></pre> -->
-
+              
+                <ngb-rating [rate] = i.rating ></ngb-rating>
+                <hr>
+                  Rate: <b>{{ i.rating }}</b>
             </td>
             <td>
               <div class="d-flex flex-column">
                   <button
                   type="button"
-                  class="btn btn-primary"
+                  class="btn btn-primary m-1"
                   (click)="openLg(mymodal)"
                   placement="right"
                   ngbTooltip="View">
@@ -72,7 +73,7 @@
 
                 <button
                   type="button"
-                  class="btn btn-warning"
+                  class="btn btn-warning m-1"
                   (click)="editTableRow(i)"
                   placement="right"
                   ngbTooltip="Edit">
@@ -82,7 +83,7 @@
 
                 <button
                   type="button"
-                  class="btn btn-danger"
+                  class="btn btn-danger m-1"
                   (click)="deleteCustomer(i.key)"
                   placement="right"
                   ngbTooltip="Delete Item">
@@ -90,7 +91,7 @@
                   <i class="far fa-trash-alt"></i>
                 </button>
 
-                <button class="btn btn-info"
+                <button class="btn btn-info m-1"
                 (click)="goDetailInfo(i.key)"
                 placement="right"
                 ngbTooltip="Detail Info">
@@ -104,7 +105,7 @@
             <!--- modal -->
             <ng-template #mymodal let-modal>
               <div class="modal-header">
-                <h4 class="modal-title">More information about Hotel</h4>
+                <h4 class="modal-title"><h2>More information about Hotel</h2></h4>
                 <button
                   type="button"
                   class="close"
@@ -119,25 +120,29 @@
                   <div class="row">
                     <div class="col-12">
                       <h1>{{ i.name }}</h1>
-                      <h3>5 star</h3>
+                      <div class="row ml-1">
+                        <h2><b>Rete:{{ i.rating }}</b></h2>
+                        <i class="far fa-star ml-2" style="margin-top: 6px; font-size: 20px;"></i>
+                      </div>
+                      
+                      
                       <img src="{{ i.Image }}" alt="" style="width: inherit" />
                     </div>
                     <div
                       class="row my-3 d-flex justify-content-between"
                       style="width: 100%"
                     >
-                      <div class="col-4">
+                      <div class="col-6">
                         <ul>
                           <li>
-                            <i class="fas fa-search-location"></i>
+                            <i class="fas fa-search-location mr-1"></i>
                             {{ i.HotelAddress }}
                           </li>
-                          <li><i class="fas fa-city"></i> {{ i.City }}</li>
+                          <li><i class="fas fa-city mr-1"></i> {{ i.City }}</li>
                         </ul>
                       </div>
-                      <div class="col-8">
-                        <i class="fas fa-text-width" style="font-size: 25px;"></i>
-                        {{ i.Descrption }}
+                      <div class="col-6 text-center border rounded">
+                        <p class="text-break">{{ i.Descrption }}</p>
                       </div>
                     </div>
                   </div>
