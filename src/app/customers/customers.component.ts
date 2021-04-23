@@ -29,6 +29,7 @@ export class CustomersComponent implements OnInit {
     Image: string;
     id: any;
     rooms?: any[];
+    rating: any;
   } = {
     name: '',
     HotelAddress: '',
@@ -36,6 +37,7 @@ export class CustomersComponent implements OnInit {
     Descrption: '',
     Image: '',
     id: null,
+    rating: '',
     rooms: [
       {
         roomNumber: 1,
@@ -94,7 +96,6 @@ export class CustomersComponent implements OnInit {
 
   ngAfterContentChecked() {
     this.allCustomers = this.customers.length;
-    console.log(this.customers);
   }
 
   ngOnInit(): void {
@@ -126,8 +127,13 @@ export class CustomersComponent implements OnInit {
       Descrption: '',
       Image: '',
       id: null,
+      rating: '',
       rooms: [],
     };
+    // this.arrRating.push(this.rating)
+    // localStorage.setItem('arrRating', JSON.stringify(this.arrRating));
+    // console.log(this.arrRating)
+    // this.rating = '';
   }
 
   openVerticallyCentered(deleteContent: any) {

@@ -31,7 +31,7 @@
                 <div
                   class="content d-flex flex-column text-center pl-5 pr-5 pt-3"
                 >
-                  <label for="" class="my-2"><b>Image</b> </label>
+                  <label for="" class="my-2"><i class="far fa-image mr-2"></i><b>Image</b> </label>
                   <input
                     class="border rounded"
                     [(ngModel)]="product.Image"
@@ -45,20 +45,29 @@
                     type="text"
                     style="height: 35px"
                   />
-                  <label for="" class="mt-2"><b>Hotel Address</b></label>
+                  <label for="" class="mt-2"><i class="fas fa-map-marker-alt mr-2"></i><b>Hotel Address</b></label>
                   <input
                     class="border rounded"
                     [(ngModel)]="product.HotelAddress"
                     type="text"
                     style="height: 35px"
                   />
-                  <label for="" class="mt-2"><b>City</b></label>
+                  <label for="" class="mt-2"><i class="fas fa-city mr-2"></i><b>City</b></label>
                   <input
                     class="border rounded"
                     [(ngModel)]="product.City"
                     type="text"
                     style="height: 35px"
                   />
+
+                  <label for="" class="mt-2"><i class="far fa-star mr-2"></i><b>Rating</b></label>
+                  <input
+                    class="border rounded"
+                    [(ngModel)]="product.rating"
+                    type="number"
+                    style="height: 35px"
+                  />
+
                   <label for="" class="mt-2"><b> Descrption</b></label>
                   <div class="form-floating">
                     <textarea
@@ -141,13 +150,13 @@
       </div>
     </div>
     <!-- ----- -->
-
+    <div id="table" class=" mt-5">
+      <app-table [item]="customers" ></app-table>
+    </div>
   </div>
 </div>
 
-<div id="table" class=" mt-5">
-  <app-table [item]="customers"></app-table>
-</div>
+
 
 
 <div>

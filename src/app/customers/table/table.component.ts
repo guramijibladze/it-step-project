@@ -17,6 +17,7 @@ import { Router } from '@angular/router';
 export class TableComponent implements OnInit {
   // currentRate = 6;
   @Input() item: any = [];
+  @Input() rating: any = [];
   tableEdit: boolean = false;
   showCustomer!: Customer;
   id!:any;
