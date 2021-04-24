@@ -20,7 +20,11 @@ export class DetailInfoComponent implements OnInit {
   HotelAddress!: any;
   HotelName!: any;
   Description!: any;
-  hotelImages?: any[any] = ['https://source.unsplash.com/random/?tech,care','https://source.unsplash.com/random/?tech,care','https://source.unsplash.com/random/?tech,care', 'https://source.unsplash.com/random/?tech,care', 'https://source.unsplash.com/random/?tech,care'];
+  hotelImages?: any[any] = ['https://cf.bstatic.com/images/hotel/max1280x900/292/292505480.jpg',
+  'https://cf.bstatic.com/images/hotel/max1280x900/204/204678517.jpg',
+  'https://cf.bstatic.com/images/hotel/max1280x900/204/204691458.jpg',
+  'https://cf.bstatic.com/images/hotel/max1280x900/204/204685621.jpg',
+  'https://cf.bstatic.com/images/hotel/max1280x900/177/177525639.jpg'];
 
   customers: Array<Customer> = [];
   currentCustomer: any;

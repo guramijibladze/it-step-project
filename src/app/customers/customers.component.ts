@@ -26,18 +26,18 @@ export class CustomersComponent implements OnInit {
     HotelAddress: string;
     City: string;
     Descrption: string;
-    hotelImages: any[];
+    hotelFrontImage: any;
     date: string;
     rating?: number;
     rooms?: any[];
   } = {
-    name: '',
-    HotelAddress: '',
-    City: '',
-    Descrption: '',
-    hotelImages: [],
+    name: 'Raddison Collection Hotel',
+    HotelAddress: '42 str.tsintsadze',
+    City: 'Tsinandali Estate Georgia',
+    Descrption: 'Radisson Collection Hotel, Tsinandali Estate Georgia is situated in Tsinandali, 1.4 km from Tsinandali Palace Museum, and offers free WiFi. An infinity outdoor swimming pool with view and pool bar is available on site as well as spa facilities, steam rooms and fitness centre.',
+    hotelFrontImage: 'https://cf.bstatic.com/images/hotel/max1280x900/292/292505480.jpg',
     date: '',
-    rating: 0,
+    rating: 10,
     rooms: [
       {
         roomNumber: 1,
@@ -46,41 +46,41 @@ export class CustomersComponent implements OnInit {
         price: 24,
         taken: false,
         roomPictures: [
-          'https://www.swissotel.com/assets/0/92/3686/3768/3770/6442451433/ae87da19-9f23-450a-8927-6f4c700aa104.jpg',
-          'https://www.swissotel.com/assets/0/92/3686/3768/3770/6442451433/ae87da19-9f23-450a-8927-6f4c700aa104.jpg',
+          'https://cf.bstatic.com/images/hotel/max1024x768/204/204678517.jpg',
+          'https://cf.bstatic.com/images/hotel/max1024x768/204/204691458.jpg',
         ],
       },
       {
         roomNumber: 2,
         roomPlaces: 2,
-        amenities: ['tv', 'conditioner', 'kitchen'],
+        amenities: ['tv', 'conditioner', 'kitchen', 'WIFI'],
         price: 400,
         taken: true,
         roomPictures: [
-          'https://www.swissotel.com/assets/0/92/3686/3768/3770/6442451433/ae87da19-9f23-450a-8927-6f4c700aa104.jpg',
-          'https://www.swissotel.com/assets/0/92/3686/3768/3770/6442451433/ae87da19-9f23-450a-8927-6f4c700aa104.jpg',
+          'https://cf.bstatic.com/images/hotel/max1024x768/204/204678517.jpg',
+          'https://cf.bstatic.com/images/hotel/max1024x768/204/204691458.jpg',
         ],
       },
       {
-        roomNumber: 2,
+        roomNumber: 3,
         roomPlaces: 2,
         amenities: ['tv', 'conditioner', 'kitchen'],
         price: 400,
         taken: true,
         roomPictures: [
-          'https://www.swissotel.com/assets/0/92/3686/3768/3770/6442451433/ae87da19-9f23-450a-8927-6f4c700aa104.jpg',
-          'https://www.swissotel.com/assets/0/92/3686/3768/3770/6442451433/ae87da19-9f23-450a-8927-6f4c700aa104.jpg',
+          'https://cf.bstatic.com/images/hotel/max1024x768/204/204678517.jpg',
+          'https://cf.bstatic.com/images/hotel/max1024x768/204/204691458.jpg',
         ],
       },
       {
-        roomNumber: 1,
+        roomNumber: 4,
         roomPlaces: 4,
         amenities: ['tv', 'conditioner'],
         price: 24,
         taken: false,
         roomPictures: [
-          'https://www.swissotel.com/assets/0/92/3686/3768/3770/6442451433/ae87da19-9f23-450a-8927-6f4c700aa104.jpg',
-          'https://www.swissotel.com/assets/0/92/3686/3768/3770/6442451433/ae87da19-9f23-450a-8927-6f4c700aa104.jpg',
+          'https://cf.bstatic.com/images/hotel/max1024x768/204/204678517.jpg',
+          'https://cf.bstatic.com/images/hotel/max1024x768/204/204691458.jpg',
         ],
       },
     ],
@@ -160,7 +160,7 @@ export class CustomersComponent implements OnInit {
       HotelAddress: '',
       City: '',
       Descrption: '',
-      hotelImages: [],
+      hotelFrontImage: '',
       date: '',
       rating: 0,
       rooms: [],

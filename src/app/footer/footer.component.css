@@ -1,5 +1,5 @@
 /* footer{
-  
+
 } */
 
 hr {
@@ -22,4 +22,8 @@ hr {
 .img-fluid{
   width: 6%;
   height: 5%;
+}
+
+footer{
+  position: relative !important;
 }

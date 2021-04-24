@@ -177,7 +177,7 @@
     </ng-template>
   </section>
 
-  <section class="pt-5 pb-5">
+  <section class="pb-5">
     <div class="container">
       <div class="row">
         <div class="col-6">
@@ -221,21 +221,22 @@
                       <div *ngFor="let p of d.roomPictures; let dIndex = index">
                         <img
                           class="img-fluid"
-                          alt="100%x280"
+                          alt="room_image"
                           *ngIf="dIndex < 1"
                           src="{{ p }}"
                         />
                       </div>
 
                       <div class="card-body">
-                        <h4 class="card-title">{{ d.roomNumber }}</h4>
+                        <h4 class="card-title"> <i class="far fa-address-card"></i> {{ d.roomNumber }}</h4>
                         <p class="card-text">
-                          {{ d.roomPlaces }}
+                          <i class="fas fa-user-friends"></i> {{ d.roomPlaces }}
                         </p>
                         <h3>
-                          Amenities: <em>{{ d.amenities }}</em>
+                          <i class="fas fa-clipboard-list"></i> Amenities: <span>{{ d.amenities }}</span>
                         </h3>
-                        <h3>{{ d.price }}</h3>
+                        <h3><i class="fas fa-tags"></i> {{ d.price }} $</h3>
+                        <p class="card-text"> {{d.taken? 'Reserved':''}} </p>
                       </div>
                       <button
                         type="button"
@@ -289,7 +290,7 @@
                                   <ul>
                                     <li>
                                       <div class="d-flex">
-                                        <i class="fas fa-user-alt m-1"></i>
+                                        <i class="fas fa-user-friends"></i>
                                         <p class="m-1">Up to {{ d.roomPlaces}} Persons</p>
                                       </div>
 

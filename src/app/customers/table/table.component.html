@@ -5,7 +5,7 @@
       <table class="table-responsive table-image">
         <thead style="background-color: #53638f;">
           <tr>
-            <th scope="col" class="text-center pt-2"><h3><b>NUM</b></h3></th>
+            <th scope="col" class="text-center pt-2 pe-2"><h3><b>ID</b></h3></th>
             <th class="text-center pt-2" scope="col"><h3><b>Image</b></h3></th>
             <th scope="col" class="text-center pt-2"><h3><b>Hotel Name</b></h3></th>
             <!-- <th scope="col"><h3><b>Address</b></h3></th> -->
@@ -23,11 +23,11 @@
             <td class="w-25">
               <img
                 *ngIf="!tableEdit || showCustomer.key !== i.key"
-                src="{{ i.hotelImages }}"
+                src="{{ i.hotelFrontImage }}"
                 class="img-fluid img-thumbnail"
-                alt="Sheep"
+                alt="table_image"
               />
-              <input *ngIf="tableEdit && showCustomer.key === i.key" type="text" [(ngModel)]="i.Image" />
+              <input *ngIf="tableEdit && showCustomer.key === i.key" type="text" [(ngModel)]="i.hotelFrontImage" />
             </td>
             <td>
               <p *ngIf="!tableEdit || showCustomer.key !== i.key"><b>{{ i.name }}</b></p>
@@ -132,7 +132,7 @@
                       </div>
 
 
-                      <img src="{{ i.Image }}" alt="" style="width: inherit" />
+                      <img src="{{ i.hotelFrontImage }}" alt="" style="width: inherit" />
                     </div>
                     <div
                       class="row my-3 d-flex justify-content-between"

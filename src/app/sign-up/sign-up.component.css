@@ -20,6 +20,8 @@ section{
     position: relative;
     min-height: 100vh;
     background-color: #f2f2f2;
+    margin-top: 2em;
+    margin-bottom: 2em;
 }
 
 input[type="text"]::placeholder {
