@@ -105,11 +105,16 @@ export class DetailInfoComponent implements OnInit {
     return results;
   };
 
-  addHotelRoom(roomPictures: any) {
+  addHotelRoom(roomPictures: any, roomAmenities: any) {
     if(roomPictures){
       let tmp = roomPictures.split(',');
       this.product.roomPictures = [...tmp]
     }
+    if(roomAmenities){
+      let tmp = roomAmenities.split(',');
+      this.product.amenities = [...tmp]
+    }
+    
     this.currentCustomer.rooms.push(this.product);
     this.db.addCustomerRoom(this.currentCustomer.rooms, this.currentCustomer.key);
     this.product = {

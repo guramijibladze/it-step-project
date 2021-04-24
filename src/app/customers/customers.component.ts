@@ -14,7 +14,6 @@ import { Router } from '@angular/router';
   templateUrl: './customers.component.html',
   styleUrls: ['./customers.component.css'],
 })
-
 export class CustomersComponent implements OnInit {
   @Output() isLogout = new EventEmitter<void>();
   allCustomers: number = 0;
@@ -46,7 +45,10 @@ export class CustomersComponent implements OnInit {
         amenities: ['tv', 'conditioner'],
         price: 24,
         taken: false,
-        roomPictures: []
+        roomPictures: [
+          'https://www.swissotel.com/assets/0/92/3686/3768/3770/6442451433/ae87da19-9f23-450a-8927-6f4c700aa104.jpg',
+          'https://www.swissotel.com/assets/0/92/3686/3768/3770/6442451433/ae87da19-9f23-450a-8927-6f4c700aa104.jpg',
+        ],
       },
       {
         roomNumber: 2,
@@ -54,7 +56,10 @@ export class CustomersComponent implements OnInit {
         amenities: ['tv', 'conditioner', 'kitchen'],
         price: 400,
         taken: true,
-        roomPictures: []
+        roomPictures: [
+          'https://www.swissotel.com/assets/0/92/3686/3768/3770/6442451433/ae87da19-9f23-450a-8927-6f4c700aa104.jpg',
+          'https://www.swissotel.com/assets/0/92/3686/3768/3770/6442451433/ae87da19-9f23-450a-8927-6f4c700aa104.jpg',
+        ],
       },
       {
         roomNumber: 2,
@@ -62,7 +67,10 @@ export class CustomersComponent implements OnInit {
         amenities: ['tv', 'conditioner', 'kitchen'],
         price: 400,
         taken: true,
-        roomPictures: []
+        roomPictures: [
+          'https://www.swissotel.com/assets/0/92/3686/3768/3770/6442451433/ae87da19-9f23-450a-8927-6f4c700aa104.jpg',
+          'https://www.swissotel.com/assets/0/92/3686/3768/3770/6442451433/ae87da19-9f23-450a-8927-6f4c700aa104.jpg',
+        ],
       },
       {
         roomNumber: 1,
@@ -70,7 +78,10 @@ export class CustomersComponent implements OnInit {
         amenities: ['tv', 'conditioner'],
         price: 24,
         taken: false,
-        roomPictures: []
+        roomPictures: [
+          'https://www.swissotel.com/assets/0/92/3686/3768/3770/6442451433/ae87da19-9f23-450a-8927-6f4c700aa104.jpg',
+          'https://www.swissotel.com/assets/0/92/3686/3768/3770/6442451433/ae87da19-9f23-450a-8927-6f4c700aa104.jpg',
+        ],
       },
     ],
   };
