@@ -1,5 +1,5 @@
-.img-fluid{
-    width: 5%;
+a > .img-fluid{
+    width: 4em;
     height: 4%;
 }
 
@@ -7,3 +7,5 @@ a:hover{
     font-size: 150%;
     margin: 0 auto;
 }
+
+

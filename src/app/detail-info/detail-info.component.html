@@ -65,6 +65,8 @@
         background-color: rgb(62, 159, 204);
         height: 60px;
         margin-top: 80px;
+        color: white;
+        font-weight: 300;
       "
     >
       <div class="d-flex justify-content-between">
@@ -135,7 +137,7 @@
               style="height: 35px"
             />
             <label for="" class="my-2"
-              ><b>Room Pictures <em>put "," between links</em></b>
+              ><b>Room Pictures <em>Leave the <i class="fas fa-arrows-alt-h"></i> space between links</em></b>
             </label>
             <input
               #roomPictures
@@ -215,9 +217,8 @@
                 [ngClass]="{ active: i == 0 }"
               >
                 <div class="row d-flex flex-nowrap">
-                  <div class="col-md-4 mb-3" *ngFor="let d of data">
-                    <div class="card" [ngClass]="{'room__taken':d.taken, 'room__nottaken':!d.taken}"
-                    >
+                  <div class="col-12 col-sm-6 col-md-4 mb-3" *ngFor="let d of data">
+                    <div class="card" [ngClass]="{'room__taken':d.taken, 'room__nottaken':!d.taken}">
                       <div *ngFor="let p of d.roomPictures; let dIndex = index">
                         <img
                           class="img-fluid"
@@ -289,7 +290,7 @@
                                 <div class="col-6">
                                   <ul>
                                     <li>
-                                      <div class="d-flex">
+                                      <div class="d-flex align-items-center">
                                         <i class="fas fa-user-friends"></i>
                                         <p class="m-1">Up to {{ d.roomPlaces}} Persons</p>
                                       </div>

@@ -21,7 +21,6 @@ section{
     min-height: 100vh;
     background-color: #f2f2f2;
     margin-top: 2em;
-    margin-bottom: 2em;
 }
 
 input[type="text"]::placeholder {
@@ -48,12 +47,6 @@ input[type="number"]::placeholder{
 .successMessage{
     margin-top: 50px;
 }
-
-.footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-  }
 
 .form-check-input{
   margin-top: 0px !important;

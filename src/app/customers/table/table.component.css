@@ -10,8 +10,9 @@ td{
   text-align: center;
 }
 
-th > b{
-  color: white;
+th > h3{
+  color: white !important;
+  font-weight: 300;
 }
 
 ul{
