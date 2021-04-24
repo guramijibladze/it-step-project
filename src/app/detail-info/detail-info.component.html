@@ -41,25 +41,16 @@
 
   <!-- Hotel Photo Gallery -->
   <section>
-    <div class="container mt-5">
+    <!-- <div class="container mt-5">
       <ngb-carousel *ngIf="hotelImages">
-        <ng-template ngbSlide>
+        <ng-template ngbSlide *ngFor="hotelImage of hotelImages">
           <div class="picsum-img-wrapper">
-            <img [src]="hotelImages[0]" alt="Random first slide" />
-          </div>
-        </ng-template>
-        <ng-template ngbSlide>
-          <div class="picsum-img-wrapper">
-            <img [src]="hotelImages[1]" alt="Random second slide" />
-          </div>
-        </ng-template>
-        <ng-template ngbSlide>
-          <div class="picsum-img-wrapper">
-            <img [src]="hotelImages[2]" alt="Random third slide" />
+            <img [src]="hotelImages" alt="Random first slide" />
           </div>
         </ng-template>
       </ngb-carousel>
-    </div>
+    </div> -->
+    <app-gallery [gallery]="hotelImages"></app-gallery>
   </section>
 
   <section>
@@ -225,7 +216,8 @@
               >
                 <div class="row d-flex flex-nowrap">
                   <div class="col-md-4 mb-3" *ngFor="let d of data">
-                    <div class="card">
+                    <div class="card" [ngClass]="{'room__taken':d.taken, 'room__nottaken':!d.taken}"
+                    >
                       <div *ngFor="let p of d.roomPictures; let dIndex = index">
                         <img
                           class="img-fluid"

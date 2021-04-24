@@ -25,6 +25,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { CustomFormsModule } from 'ngx-custom-validators';
 import { NavigationComponent } from './navigation/navigation.component';
 import { DetailInfoComponent } from './detail-info/detail-info.component';
+import { GalleryComponent } from './detail-info/gallery/gallery.component';
 // import { ReactiveFormsModule } from '@angular/forms';
 
 
@@ -40,7 +41,8 @@ import { DetailInfoComponent } from './detail-info/detail-info.component';
     CustomersComponent,
     TableComponent,
     NavigationComponent,
-    DetailInfoComponent
+    DetailInfoComponent,
+    GalleryComponent
   ],
   imports: [
     BrowserModule,

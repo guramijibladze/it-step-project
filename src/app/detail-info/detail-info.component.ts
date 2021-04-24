@@ -20,7 +20,7 @@ export class DetailInfoComponent implements OnInit {
   HotelAddress!: any;
   HotelName!: any;
   Description!: any;
-  hotelImages?: any[];
+  hotelImages?: any[any] = ['https://source.unsplash.com/random/?tech,care','https://source.unsplash.com/random/?tech,care','https://source.unsplash.com/random/?tech,care', 'https://source.unsplash.com/random/?tech,care', 'https://source.unsplash.com/random/?tech,care'];
 
   customers: Array<Customer> = [];
   currentCustomer: any;
@@ -91,7 +91,6 @@ export class DetailInfoComponent implements OnInit {
         this.HotelName = customer.name;
         this.HotelAddress = customer.HotelAddress;
         this.Description = customer.Descrption;
-        this.hotelImages = customer.hotelImages;
       }
     });
   };
@@ -114,7 +113,7 @@ export class DetailInfoComponent implements OnInit {
       let tmp = roomAmenities.split(',');
       this.product.amenities = [...tmp]
     }
-    
+
     this.currentCustomer.rooms.push(this.product);
     this.db.addCustomerRoom(this.currentCustomer.rooms, this.currentCustomer.key);
     this.product = {

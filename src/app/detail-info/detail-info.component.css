@@ -1,3 +1,8 @@
+:root{
+  --green: rgb(56, 176, 0);
+  --red: rgb(242, 27, 63);
+}
+
 section{
   margin-top: 6em;
 }
@@ -10,3 +15,18 @@ button > i {
 .add__newroom_button{
   padding: 0 !important;
 }
+
+.card{
+  margin: 5px !important;
+}
+
+.room__taken{
+  box-shadow: rgba(242, 27, 63, 0.3) 0px 0px 0px 3px;
+}
+
+.room__nottaken{
+  box-shadow: rgba(56, 176, 0, 0.3) 0px 0px 0px 3px;
+}
+
+
+
