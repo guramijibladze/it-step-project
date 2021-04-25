@@ -41,7 +41,7 @@ Following meta data is required in angular.json:
 - [Installation](#installation)
 - [Usage](#usage)
 - [Development](#development)
-- [Contributors](#contributors-shipit)
+- [Contributors](#contributors)
     - [Special Thanks](#special-thanks-star2)
 - [Footer](#footer)
 
@@ -123,15 +123,17 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 [(Back to top)](#table-of-contents)
 
 
-# Contributors :shipit:
+# Contributors
   
  **The Project was made for StepItAcademy final problemset**
  
  Project was made by 3 cool developer.
  
-  [Mikheil Khamadadze](https://github.com/fronta-stack)  @fronta-stack
-  [Beka Batmanashvili](https://github.com/Beka-Bat1) 
-  [Guram Jibladze](https://github.com/guramijibladze)
+  :shipit: [Mikheil Khamadadze](https://github.com/fronta-stack)
+  
+  :shipit: [Beka Batmanashvili](https://github.com/Beka-Bat1) 
+  
+  :shipit: [Guram Jibladze](https://github.com/guramijibladze)
 
 
 ### Special Thanks :star2:
