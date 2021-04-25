@@ -27,9 +27,10 @@ export class LoginComponent implements OnInit {
   }
    onSignin(){
     this.firebaseService.signin(this.email,this.pass)
-    if(this.firebaseService.isLoggedIn)
-    this.isSignedIn = true
-    this.router.navigate(['/customers'])
+    if(this.firebaseService.isLoggedIn){
+      this.isSignedIn = true
+      this.router.navigate(['/customers'])
+    }
   }
 
   handleLogout(){
