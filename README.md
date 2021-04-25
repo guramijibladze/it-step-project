@@ -143,7 +143,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 **Huge Huge thanks to Barbare Tepnadze - our awsome lecturer.**
 
-Thanks to StepItAcademy stuff for amazing lectures :point_right: [StepItAcademy](https://ge.itstep.org/)
+Thanks to StepItAcademy staff for amazing lectures :point_right: [StepItAcademy](https://ge.itstep.org/)
 
 [(Back to top)](#table-of-contents)
 
