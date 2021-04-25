@@ -51,10 +51,13 @@ Following meta data is required in angular.json:
 
 ```git clone https://github.com/navendu-pottekkat/nsfw-filter.git```
 
-**for node modules**
+**run in terminal**
 
 ```npm install```
 
+**to see documentation run**
+
+```npm run compodoc```
 
 [(Back to top)](#table-of-contents)
 
