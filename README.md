@@ -49,7 +49,7 @@ Following meta data is required in angular.json:
 
 ```git init```
 
-```git clone https://github.com/navendu-pottekkat/nsfw-filter.git```
+```git clone https://github.com/guramijibladze/it-step-project```
 
 **run in terminal**
 
@@ -141,7 +141,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ### Special Thanks :star2:
 
-**Huge Huge thanks to Barbare Tepnadze - our awsome lecturer.**
+**Huge Huge thanks to Barbare Tepnadze [Github](https://github.com/mestrolabe) - our awsome lecturer.**
 
 Thanks to StepItAcademy staff for amazing lectures :point_right: [StepItAcademy](https://ge.itstep.org/)
 
