@@ -49,7 +49,7 @@ Following meta data is required in angular.json:
 
 ```git init```
 
-```git clone https://github.com/navendu-pottekkat/nsfw-filter.git```
+```git clone https://github.com/guramijibladze/it-step-project```
 
 **run in terminal**
 
