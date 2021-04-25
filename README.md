@@ -9,7 +9,7 @@
 
 
 
-# Demo-Preview ✨
+# Demo-Preview :sparkles:
  At webpage you are able to add hotel information such as: hotel name, image, address, city, hotel stars. and ofcourse cool functionality is in your hands. :blush: inline edit/remove, data preview in modal, and also see detailed information ...
  
 **overview**
@@ -35,14 +35,14 @@ Following meta data is required in angular.json:
 
 # Table of contents
 
-- [Project Title](#step-it-academy-final-travel-More-:wave:)
-- [Demo-Preview](#demo-Preview-✨)
+- [Project Title](#step-it-academy-final-travel-more-wave)
+- [Demo-Preview](#demo-preview-sparkles)
 - [Table of contents](#table-of-contents)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Development](#development)
-- [Contributors](#contributors-:shipit:)
-    - [Special Thanks](#special-thanks-:star2:)
+- [Contributors](#contributors-shipit)
+    - [Special Thanks](#special-thanks-star2)
 - [Footer](#footer)
 
 # Installation
@@ -129,17 +129,16 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
  
  Project was made by 3 cool developer.
  
-  [Mikheil Khamadadze](https://github.com/fronta-stack)
-  [Beka Batmanashvili](https://github.com/Beka-Bat1)
+  [Mikheil Khamadadze](https://github.com/fronta-stack)  @fronta-stack
+  [Beka Batmanashvili](https://github.com/Beka-Bat1) 
   [Guram Jibladze](https://github.com/guramijibladze)
 
 
 ### Special Thanks :star2:
 
-**Huge Huge thanks to Barbare Tepnadze - our awsome lecturer**
+**Huge Huge thanks to Barbare Tepnadze - our awsome lecturer.**
 
-Thanks to StepItAcademy stuff for amazing lectures
-[StepItAcademy](https://ge.itstep.org/)
+Thanks to StepItAcademy stuff for amazing lectures :point_right: [StepItAcademy](https://ge.itstep.org/)
 
 [(Back to top)](#table-of-contents)
 
