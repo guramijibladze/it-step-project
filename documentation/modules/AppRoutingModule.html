@@ -76,13 +76,15 @@ import { SignUpComponent } from &#x27;./sign-up/sign-up.component&#x27;;
 import { LoginComponent } from &#x27;./login/login.component&#x27;;
 import { CustomersComponent } from &#x27;./customers/customers.component&#x27;;
 import { DetailInfoComponent } from &#x27;./detail-info/detail-info.component&#x27;;
+import { PageNotFoundComponent } from &#x27;./page-not-found/page-not-found.component&#x27;;
 
 const routes: Routes &#x3D; [
   // { path: &#x27;&#x27;, redirectTo: &quot;**&quot;, pathMatch: &#x27;full&#x27;},
   { path: &#x27;register&#x27;, component: SignUpComponent },
   { path: &#x27;&#x27;, component: LoginComponent },
   { path: &#x27;customers&#x27;, component: CustomersComponent },
-  { path: &#x27;detailInfo/:id&#x27;, component: DetailInfoComponent }
+  { path: &#x27;detailInfo/:id&#x27;, component: DetailInfoComponent },
+  { path: &#x27;**&#x27;, component:PageNotFoundComponent }
 ];
 
 @NgModule({
