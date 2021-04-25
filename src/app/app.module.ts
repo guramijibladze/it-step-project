@@ -26,6 +26,7 @@ import { CustomFormsModule } from 'ngx-custom-validators';
 import { NavigationComponent } from './navigation/navigation.component';
 import { DetailInfoComponent } from './detail-info/detail-info.component';
 import { GalleryComponent } from './detail-info/gallery/gallery.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 // import { ReactiveFormsModule } from '@angular/forms';
 
 
@@ -42,7 +43,8 @@ import { GalleryComponent } from './detail-info/gallery/gallery.component';
     TableComponent,
     NavigationComponent,
     DetailInfoComponent,
-    GalleryComponent
+    GalleryComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
