@@ -1,6 +1,6 @@
 
 # Step-It-Academy-Final-Travel-More :wave:
-**Travel More is dedicated to hospitality B2B platform, where business owner can share hotel information for customers.**
+**Travel More is dedicated to hospitality B2C platform, where business owner can share hotel information for customers.**
 
 ![Github](https://img.shields.io/npm/v/npm)
 
